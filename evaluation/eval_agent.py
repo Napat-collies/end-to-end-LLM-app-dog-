@@ -16,6 +16,7 @@ Held-out set (questions written AFTER the system was tuned, never used for tunin
 Writes evaluation/results/agent_heldout_set.md and .json
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -27,6 +28,7 @@ from evaluation.metrics import check_answer, mean
 HERE = Path(__file__).parent
 RESULTS = HERE / "results"
 SQL_CHECKS = {"top", "count", "filter"}
+NUMBER = re.compile(r"\d+(?:\.\d+)?")
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -36,6 +38,16 @@ def load_jsonl(path: Path) -> list[dict]:
 def gold_for(item: dict, db) -> dict | None:
     """Run the gold filter on the database -> {"names": [...], "total": n}."""
     check = item["check"]
+    if check["type"] == "row_values":   # e.g. "how long does a Great Dane live?" -> the DB's numbers
+        values, names = [], []
+        for spec in check["rows"]:
+            res = db.run(QueryBreedsArgs(name_contains=spec["name_contains"], limit=1))
+            if not res["rows"]:
+                raise ValueError(f"{item['id']}: no breed matches {spec['name_contains']!r}")
+            row = res["rows"][0]
+            names.append(row["name"])
+            values.append(NUMBER.findall(row[spec["field"]]))
+        return {"names": names, "values": values}
     if check["type"] not in SQL_CHECKS:
         return None
     args = QueryBreedsArgs.model_validate({"limit": 20, **check["gold"]})
@@ -79,7 +91,7 @@ def main() -> None:
             "gold": gold,
             "expected_tools": it["expected_tools"], "called_tools": called,
             "tool_ok": None if it["expected_tools"] is None else set(called) == set(it["expected_tools"]),
-            "sql_match": sql_match(it, resp.tool_calls, ctx.db, gold) if gold else None,
+            "sql_match": sql_match(it, resp.tool_calls, ctx.db, gold) if it["check"]["type"] in SQL_CHECKS else None,
             "agent_correct": check_answer(it["check"], resp.answer, gold),
             "baseline_correct": check_answer(it["check"], base, gold),
             "steps": resp.steps, "stop_reason": resp.stop_reason,
@@ -95,8 +107,8 @@ def main() -> None:
         return f"{mean([1.0 if v else 0.0 for v in vals]):.2f} ({sum(vals)}/{len(vals)})" if vals else "-"
 
     groups = {
-        "SQL questions": [r for r in rows if r["check"] in SQL_CHECKS],
-        "Document questions": [r for r in rows if r["check"] == "keywords"
+        "SQL questions": [r for r in rows if r["check"] in SQL_CHECKS | {"row_values"}],
+        "Document questions": [r for r in rows if r["check"] in ("keywords", "grounded")
                                and r["expected_tools"] == ["search_breed_docs"]],
         "Both tools": [r for r in rows if r["expected_tools"] and len(r["expected_tools"]) == 2],
         "Off-topic / not covered": [r for r in rows if r["check"] in ("offtopic", "abstain")],

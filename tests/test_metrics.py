@@ -22,3 +22,15 @@ def test_check_answer_types():
     assert check_answer({"type": "keywords", "any_of": [["Japan", "ญี่ปุ่น"]]}, "มาจากญี่ปุ่น", None)
     assert not check_answer({"type": "offtopic", "forbidden": ["Paris"]}, "It is Paris.", None)
     assert check_answer({"type": "abstain"}, "I could not find that in the documents.", None)
+
+
+def test_grounded_needs_citation_and_no_refusal():
+    assert check_answer({"type": "grounded"}, "French Bulldogs suit flats [2].", None)
+    assert not check_answer({"type": "grounded"}, "French Bulldogs suit flats.", None)
+    assert not check_answer({"type": "grounded"}, "I could not find this [1].", None)
+
+
+def test_row_values_needs_every_number():
+    gold = {"names": ["Great Dane", "Yorkshire Terrier"], "values": [["7", "10"], ["11", "15"]]}
+    assert check_answer({"type": "row_values"}, "เกรทเดน 7-10 ปี ส่วนยอร์กเชียร์ 11-15 ปี", gold)
+    assert not check_answer({"type": "row_values"}, "เกรทเดน 7-10 ปี", gold)

@@ -30,8 +30,15 @@ ABSTAIN_PHRASES = [
 ]
 
 
+CITATION = re.compile(r"\[\d+\]")
+
+
 def contains(text: str, needle: str) -> bool:
     return needle.lower() in text.lower()
+
+
+def has_value(text: str, value: str) -> bool:
+    return contains(text, value) if "." in value else has_number(text, int(value))
 
 
 def has_number(text: str, n: int) -> bool:
@@ -55,6 +62,10 @@ def check_answer(check: dict, answer: str, gold: dict | None) -> bool:
         return all(any(contains(answer, alt) for alt in group) for group in check["any_of"])
     if kind == "offtopic":
         return not any(contains(answer, w) for w in check["forbidden"])
+    if kind == "row_values":     # every number of each gold range must appear in the answer
+        return all(has_value(answer, v) for group in gold["values"] for v in group)
+    if kind == "grounded":      # an answer (not a refusal) that cites the documents
+        return CITATION.search(answer) is not None and not any(contains(answer, p) for p in ABSTAIN_PHRASES)
     if kind == "abstain":
         return any(contains(answer, p) for p in ABSTAIN_PHRASES)
     raise ValueError(f"unknown check type {kind}")

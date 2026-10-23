@@ -1,7 +1,9 @@
 """The only place in the project that talks to the class LLM proxy."""
+import time
 from functools import lru_cache
 from typing import Any
 
+import openai
 from openai import OpenAI
 
 from app.core import config
@@ -18,6 +20,24 @@ def get_client() -> OpenAI:
     )
 
 
+# Errors worth waiting out (network blips, proxy overload). Bad requests are NOT retried.
+TRANSIENT = (openai.APIConnectionError, openai.APITimeoutError, openai.RateLimitError,
+             openai.InternalServerError)
+WAITS_S = (5, 15, 30)   # extra attempts on top of the SDK's own quick retries
+
+
+def with_retry(fn, *args, **kwargs):
+    for attempt, wait in enumerate((*WAITS_S, None), start=1):
+        try:
+            return fn(*args, **kwargs)
+        except TRANSIENT as e:
+            if wait is None:
+                raise
+            print(f"  [proxy] {type(e).__name__}, retrying in {wait}s (attempt {attempt}/{len(WAITS_S)})",
+                  flush=True)
+            time.sleep(wait)
+
+
 def chat(messages: list[dict[str, Any]], tools: list[dict] | None = None, client=None):
     """One chat completion at temperature 0. Returns the assistant message object."""
     client = client or get_client()
@@ -28,7 +48,7 @@ def chat(messages: list[dict[str, Any]], tools: list[dict] | None = None, client
     }
     if tools:
         kwargs["tools"] = tools
-    resp = client.chat.completions.create(**kwargs)
+    resp = with_retry(client.chat.completions.create, **kwargs)
     return resp.choices[0].message
 
 
@@ -38,7 +58,7 @@ def embed(texts: list[str], client=None, batch_size: int = 64) -> list[list[floa
     out: list[list[float]] = []
     for start in range(0, len(texts), batch_size):
         batch = texts[start:start + batch_size]
-        resp = client.embeddings.create(model=config.EMBED_MODEL, input=batch)
+        resp = with_retry(client.embeddings.create, model=config.EMBED_MODEL, input=batch)
         # resp.data[i] belongs to batch[i]; never re-sort it.
         vecs = [d.embedding for d in resp.data]
         if len(vecs) != len(batch):

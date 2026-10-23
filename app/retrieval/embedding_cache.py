@@ -11,7 +11,24 @@ from pathlib import Path
 import numpy as np
 
 from app.core import config
-from app.core.llm import embed
+from app.core.llm import TRANSIENT, embed
+
+MAX_BATCH = 32          # at most this many texts per embedding request
+MAX_BATCH_WORDS = 3000  # ...and at most this many words, so long chunks don't time out the proxy
+
+
+def _batches(indices: list[int], texts: list[str]):
+    """Group texts so each request stays under both limits (long chunks -> smaller batches)."""
+    batch, words = [], 0
+    for i in indices:
+        n = len(texts[i].split())
+        if batch and (len(batch) >= MAX_BATCH or words + n > MAX_BATCH_WORDS):
+            yield batch
+            batch, words = [], 0
+        batch.append(i)
+        words += n
+    if batch:
+        yield batch
 
 
 class EmbeddingCache:
@@ -40,10 +57,13 @@ class EmbeddingCache:
             for k, blob in self.con.execute(q, part):
                 found[k] = np.frombuffer(blob, dtype=np.float32)
         missing = [i for i, k in enumerate(keys) if k not in found]
-        if missing:
-            vecs = embed([texts[i] for i in missing], client=client)
+        # Embed in batches and SAVE EACH BATCH right away, so a network error halfway
+        # through loses at most one batch - re-running continues where it stopped.
+        done = 0
+        for batch in _batches(missing, texts):
+            vecs = self._embed_batch([texts[i] for i in batch], client)
             rows = []
-            for i, v in zip(missing, vecs):
+            for i, v in zip(batch, vecs):
                 arr = np.asarray(v, dtype=np.float32)
                 if arr.shape[0] != config.EMBED_DIM:
                     raise RuntimeError(f"expected {config.EMBED_DIM}-dim vectors, got {arr.shape[0]}")
@@ -51,4 +71,18 @@ class EmbeddingCache:
                 rows.append((keys[i], arr.tobytes()))
             self.con.executemany("INSERT OR REPLACE INTO emb VALUES (?, ?)", rows)
             self.con.commit()
+            done += len(batch)
+            if len(missing) > MAX_BATCH:
+                print(f"  embedded {done}/{len(missing)}", flush=True)
         return np.vstack([found[k] for k in keys]) if keys else np.zeros((0, config.EMBED_DIM), np.float32)
+
+    def _embed_batch(self, batch: list[str], client) -> list[list[float]]:
+        """If the proxy keeps failing on a batch, split it in half and try the halves."""
+        try:
+            return embed(batch, client=client, batch_size=len(batch))
+        except TRANSIENT:
+            if len(batch) == 1:
+                raise
+            mid = len(batch) // 2
+            print(f"  batch of {len(batch)} failed - splitting into {mid} + {len(batch) - mid}", flush=True)
+            return self._embed_batch(batch[:mid], client) + self._embed_batch(batch[mid:], client)

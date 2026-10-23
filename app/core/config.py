@@ -36,9 +36,14 @@ TOP_K = 4
 # Retriever used by the app: "dense" (bge-m3), "bm25", or "hybrid" (RRF of both).
 # Set this to whatever wins in evaluation/eval_retrieval.py.
 RETRIEVER = "dense"
-# If the best dense cosine score is below this, we say "not found" instead of guessing.
-# Tuned by the min_score sweep in evaluation/eval_retrieval.py.
-MIN_SCORE = 0.45
+# If the best dense cosine score of the USER'S QUESTION is below this, we say "not found"
+# instead of guessing. Chosen from the min_score sweep (evaluation/results/retrieval.md):
+#   0.0  (no floor): keeps 100% answerable, rejects  0% unanswerable
+#   0.45 (first guess): keeps 100%,          rejects 70%
+#   0.50 (chosen):    keeps 100%,            rejects 80%   balanced acc 0.900
+#   0.55:             keeps  91% (loses 3),  rejects 90%   balanced acc 0.903
+# 0.55 is marginally higher but refuses 3 answerable questions, so we keep 0.50.
+MIN_SCORE = 0.50
 
 # --- Agent settings ---------------------------------------------------------
 MAX_STEPS = 5              # hard stop for the agent loop

@@ -1,0 +1,5182 @@
+{
+ "chunk_sweep": {
+  "100": {
+   "bm25": {
+    "all": {
+     "r1": 0.609,
+     "r3": 0.688,
+     "r5": 0.688,
+     "mrr": 0.646,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.886,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.939,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.0,
+     "r3": 0.0,
+     "r5": 0.0,
+     "mrr": 0.0,
+     "n": 10
+    }
+   },
+   "dense": {
+    "all": {
+     "r1": 0.922,
+     "r3": 0.969,
+     "r5": 1.0,
+     "mrr": 0.961,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.932,
+     "r3": 0.955,
+     "r5": 1.0,
+     "mrr": 0.966,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.9,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.95,
+     "n": 10
+    }
+   },
+   "hybrid": {
+    "all": {
+     "r1": 0.922,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.969,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.932,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.977,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.9,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.95,
+     "n": 10
+    }
+   }
+  },
+  "250": {
+   "bm25": {
+    "all": {
+     "r1": 0.672,
+     "r3": 0.688,
+     "r5": 0.688,
+     "mrr": 0.688,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.977,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 1.0,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.0,
+     "r3": 0.0,
+     "r5": 0.0,
+     "mrr": 0.0,
+     "n": 10
+    }
+   },
+   "dense": {
+    "all": {
+     "r1": 0.922,
+     "r3": 0.969,
+     "r5": 1.0,
+     "mrr": 0.956,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.932,
+     "r3": 0.955,
+     "r5": 1.0,
+     "mrr": 0.966,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.9,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.933,
+     "n": 10
+    }
+   },
+   "hybrid": {
+    "all": {
+     "r1": 0.891,
+     "r3": 0.969,
+     "r5": 1.0,
+     "mrr": 0.94,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.886,
+     "r3": 0.955,
+     "r5": 1.0,
+     "mrr": 0.943,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.9,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.933,
+     "n": 10
+    }
+   }
+  },
+  "500": {
+   "bm25": {
+    "all": {
+     "r1": 0.672,
+     "r3": 0.688,
+     "r5": 0.688,
+     "mrr": 0.688,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.977,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 1.0,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.0,
+     "r3": 0.0,
+     "r5": 0.0,
+     "mrr": 0.0,
+     "n": 10
+    }
+   },
+   "dense": {
+    "all": {
+     "r1": 0.922,
+     "r3": 0.969,
+     "r5": 1.0,
+     "mrr": 0.956,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.932,
+     "r3": 0.955,
+     "r5": 1.0,
+     "mrr": 0.966,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.9,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.933,
+     "n": 10
+    }
+   },
+   "hybrid": {
+    "all": {
+     "r1": 0.891,
+     "r3": 0.969,
+     "r5": 1.0,
+     "mrr": 0.94,
+     "n": 32
+    },
+    "en": {
+     "r1": 0.886,
+     "r3": 0.955,
+     "r5": 1.0,
+     "mrr": 0.943,
+     "n": 22
+    },
+    "th": {
+     "r1": 0.9,
+     "r3": 1.0,
+     "r5": 1.0,
+     "mrr": 0.933,
+     "n": 10
+    }
+   }
+  }
+ },
+ "per_query": {
+  "100/bm25": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "French Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "German Shepherd",
+     "Border Collie"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.3333333333333333
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Shetland Sheepdog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Chow Chow",
+     "Great Dane"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Newfoundland",
+     "Newfoundland"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Akita",
+     "Akita",
+     "Akita"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Alaskan Malamute"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.3333333333333333
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Shih Tzu",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   }
+  ],
+  "100/dense": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dachshund"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Shetland Sheepdog",
+     "German Shepherd",
+     "Great Dane"
+    ],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 1.0,
+    "mrr": 0.25
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Chow Chow",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Newfoundland",
+     "Newfoundland"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Akita",
+     "Akita",
+     "Akita"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Siberian Husky",
+     "Alaskan Malamute"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Golden Retriever",
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Shih Tzu",
+     "Yorkshire Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Chihuahua",
+     "Shih Tzu"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.5
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [
+     "Thai Bangkaew",
+     "Thai Bangkaew",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [
+     "Beagle",
+     "Beagle",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [
+     "Pug",
+     "Shih Tzu",
+     "Pug"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [
+     "Great Dane",
+     "Great Dane",
+     "Great Dane"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [
+     "Dobermann",
+     "Dobermann",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [
+     "Samoyed",
+     "Samoyed",
+     "Samoyed"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [
+     "Yorkshire Terrier",
+     "Yorkshire Terrier",
+     "Jack Russell Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [
+     "German Shepherd",
+     "German Shepherd",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   }
+  ],
+  "100/hybrid": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dachshund"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "French Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "German Shepherd",
+     "Border Collie",
+     "Australian Shepherd"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.5
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Chow Chow",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Newfoundland",
+     "Newfoundland"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Akita",
+     "Shiba Inu",
+     "Akita"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Golden Retriever",
+     "Labrador Retriever",
+     "Golden Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Shih Tzu",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Chihuahua",
+     "Shih Tzu"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.5
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [
+     "Thai Bangkaew",
+     "Thai Bangkaew",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [
+     "Beagle",
+     "Beagle",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [
+     "Pug",
+     "Shih Tzu",
+     "Pug"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [
+     "Great Dane",
+     "Great Dane",
+     "Great Dane"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [
+     "Dobermann",
+     "Dobermann",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [
+     "Samoyed",
+     "Samoyed",
+     "Samoyed"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [
+     "Yorkshire Terrier",
+     "Yorkshire Terrier",
+     "Jack Russell Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [
+     "German Shepherd",
+     "German Shepherd",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   }
+  ],
+  "250/bm25": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Border Collie",
+     "Border Collie",
+     "Border Collie"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Chow Chow",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Labrador Retriever",
+     "Newfoundland"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bull Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Akita",
+     "Akita",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Golden Retriever",
+     "Golden Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Shih Tzu",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   }
+  ],
+  "250/dense": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dachshund"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Shetland Sheepdog",
+     "Rottweiler",
+     "Australian Shepherd"
+    ],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 1.0,
+    "mrr": 0.25
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Chow Chow",
+     "Border Collie"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Newfoundland",
+     "Newfoundland"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Akita",
+     "Akita",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Alaskan Malamute",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Golden Retriever",
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Yorkshire Terrier",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Shih Tzu",
+     "Chihuahua"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.3333333333333333
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [
+     "Thai Bangkaew",
+     "Thai Bangkaew",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [
+     "Beagle",
+     "Beagle",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [
+     "Pug",
+     "Shih Tzu",
+     "Pug"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [
+     "Great Dane",
+     "Great Dane",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [
+     "Dobermann",
+     "Dobermann",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [
+     "Samoyed",
+     "Samoyed",
+     "Samoyed"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [
+     "Yorkshire Terrier",
+     "Yorkshire Terrier",
+     "Jack Russell Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [
+     "German Shepherd",
+     "German Shepherd",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   }
+  ],
+  "250/hybrid": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dachshund"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "French Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "German Shepherd",
+     "Rottweiler"
+    ],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 1.0,
+    "mrr": 0.25
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Chow Chow",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Newfoundland",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Akita",
+     "Akita"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.5
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Alaskan Malamute",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Golden Retriever",
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Shih Tzu",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Shih Tzu",
+     "Chihuahua"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.3333333333333333
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [
+     "Thai Bangkaew",
+     "Thai Bangkaew",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [
+     "Beagle",
+     "Beagle",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [
+     "Pug",
+     "Shih Tzu",
+     "Pug"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [
+     "Great Dane",
+     "Great Dane",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [
+     "Dobermann",
+     "Dobermann",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [
+     "Samoyed",
+     "Samoyed",
+     "Samoyed"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [
+     "Yorkshire Terrier",
+     "Yorkshire Terrier",
+     "Jack Russell Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [
+     "German Shepherd",
+     "German Shepherd",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   }
+  ],
+  "500/bm25": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Border Collie",
+     "Border Collie",
+     "Border Collie"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Dobermann",
+     "Yorkshire Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Labrador Retriever",
+     "Newfoundland"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bull Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Akita",
+     "Akita",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Golden Retriever",
+     "Golden Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Shih Tzu",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 0.0,
+    "mrr": 0.0
+   }
+  ],
+  "500/dense": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dachshund"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Shetland Sheepdog",
+     "Rottweiler",
+     "Australian Shepherd"
+    ],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 1.0,
+    "mrr": 0.25
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Border Collie",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Newfoundland",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Boxer"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Akita",
+     "Akita",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Alaskan Malamute",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Golden Retriever",
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Yorkshire Terrier",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Shih Tzu",
+     "Chihuahua"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.3333333333333333
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [
+     "Thai Bangkaew",
+     "Thai Bangkaew",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [
+     "Beagle",
+     "Beagle",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [
+     "Pug",
+     "Shih Tzu",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [
+     "Great Dane",
+     "Great Dane",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [
+     "Dobermann",
+     "Dobermann",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [
+     "Samoyed",
+     "Samoyed",
+     "Pug"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [
+     "Yorkshire Terrier",
+     "Yorkshire Terrier",
+     "Jack Russell Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [
+     "German Shepherd",
+     "German Shepherd",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   }
+  ],
+  "500/hybrid": [
+   {
+    "id": "r01",
+    "lang": "en",
+    "query": "Where does the Shiba Inu originate from?",
+    "relevant": [
+     "Shiba Inu"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Shiba Inu",
+     "Shiba Inu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r02",
+    "lang": "en",
+    "query": "What animal were Dachshunds originally bred to hunt?",
+    "relevant": [
+     "Dachshund"
+    ],
+    "top3": [
+     "Dachshund",
+     "Dachshund",
+     "Dachshund"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r03",
+    "lang": "en",
+    "query": "Why is the Basenji known as a barkless dog?",
+    "relevant": [
+     "Basenji"
+    ],
+    "top3": [
+     "Basenji",
+     "Basenji",
+     "Basenji"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r04",
+    "lang": "en",
+    "query": "What work did Siberian Huskies do historically?",
+    "relevant": [
+     "Siberian Husky"
+    ],
+    "top3": [
+     "Siberian Husky",
+     "Siberian Husky",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r05",
+    "lang": "en",
+    "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?",
+    "relevant": [
+     "Cavalier King Charles Spaniel"
+    ],
+    "top3": [
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r06",
+    "lang": "en",
+    "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?",
+    "relevant": [
+     "Dalmatian"
+    ],
+    "top3": [
+     "Dalmatian",
+     "Dalmatian",
+     "Dalmatian"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r07",
+    "lang": "en",
+    "query": "What is the ridge of hair on the back of the Thai Ridgeback?",
+    "relevant": [
+     "Thai Ridgeback"
+    ],
+    "top3": [
+     "Thai Ridgeback",
+     "Thai Ridgeback",
+     "Thai Ridgeback"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r08",
+    "lang": "en",
+    "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?",
+    "relevant": [
+     "Saint Bernard"
+    ],
+    "top3": [
+     "Saint Bernard",
+     "Saint Bernard",
+     "Saint Bernard"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r09",
+    "lang": "en",
+    "query": "What breathing problems do French Bulldogs suffer from?",
+    "relevant": [
+     "French Bulldog"
+    ],
+    "top3": [
+     "French Bulldog",
+     "French Bulldog",
+     "French Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r10",
+    "lang": "en",
+    "query": "How fast can a Greyhound run?",
+    "relevant": [
+     "Greyhound"
+    ],
+    "top3": [
+     "Greyhound",
+     "Greyhound",
+     "Greyhound"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r11",
+    "lang": "en",
+    "query": "Which breed is famous for herding sheep with an intense stare?",
+    "relevant": [
+     "Border Collie"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Rottweiler",
+     "German Shepherd"
+    ],
+    "r1": 0.0,
+    "r3": 0.0,
+    "r5": 1.0,
+    "mrr": 0.25
+   },
+   {
+    "id": "r12",
+    "lang": "en",
+    "query": "What coat colours does the Labrador Retriever come in?",
+    "relevant": [
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Labrador Retriever",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r13",
+    "lang": "en",
+    "query": "Why are Poodles traditionally given their distinctive haircut?",
+    "relevant": [
+     "Poodle"
+    ],
+    "top3": [
+     "Poodle",
+     "Poodle",
+     "Poodle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r14",
+    "lang": "en",
+    "query": "Which breed has a blue-black tongue?",
+    "relevant": [
+     "Chow Chow"
+    ],
+    "top3": [
+     "Chow Chow",
+     "Dobermann",
+     "Yorkshire Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r15",
+    "lang": "en",
+    "query": "Which large breed is known for water rescue and webbed feet?",
+    "relevant": [
+     "Newfoundland"
+    ],
+    "top3": [
+     "Newfoundland",
+     "Labrador Retriever",
+     "Newfoundland"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r16",
+    "lang": "en",
+    "query": "Was the Bulldog originally used for bull-baiting?",
+    "relevant": [
+     "Bulldog"
+    ],
+    "top3": [
+     "Bulldog",
+     "Bulldog",
+     "Bulldog"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r17",
+    "lang": "en",
+    "query": "What was the Rottweiler originally used for in Germany?",
+    "relevant": [
+     "Rottweiler"
+    ],
+    "top3": [
+     "Rottweiler",
+     "Rottweiler",
+     "Rottweiler"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r18",
+    "lang": "en",
+    "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?",
+    "relevant": [
+     "Akita"
+    ],
+    "top3": [
+     "Shiba Inu",
+     "Akita",
+     "Akita"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.5
+   },
+   {
+    "id": "r19",
+    "lang": "en",
+    "query": "Despite its name, where was the Australian Shepherd actually developed?",
+    "relevant": [
+     "Australian Shepherd"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Australian Shepherd",
+     "Australian Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r20",
+    "lang": "en",
+    "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?",
+    "relevant": [
+     "Alaskan Malamute"
+    ],
+    "top3": [
+     "Alaskan Malamute",
+     "Alaskan Malamute",
+     "Siberian Husky"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r21",
+    "lang": "en",
+    "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.",
+    "relevant": [
+     "Golden Retriever",
+     "Labrador Retriever"
+    ],
+    "top3": [
+     "Labrador Retriever",
+     "Golden Retriever",
+     "Golden Retriever"
+    ],
+    "r1": 0.5,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "r22",
+    "lang": "en",
+    "query": "How much grooming does a Shih Tzu's long coat need?",
+    "relevant": [
+     "Shih Tzu"
+    ],
+    "top3": [
+     "Shih Tzu",
+     "Shih Tzu",
+     "Shih Tzu"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t01",
+    "lang": "th",
+    "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร",
+    "relevant": [
+     "Chihuahua"
+    ],
+    "top3": [
+     "Australian Shepherd",
+     "Shih Tzu",
+     "Chihuahua"
+    ],
+    "r1": 0.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 0.3333333333333333
+   },
+   {
+    "id": "t02",
+    "lang": "th",
+    "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย",
+    "relevant": [
+     "Thai Bangkaew"
+    ],
+    "top3": [
+     "Thai Bangkaew",
+     "Thai Bangkaew",
+     "Cavalier King Charles Spaniel"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t03",
+    "lang": "th",
+    "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด",
+    "relevant": [
+     "Beagle"
+    ],
+    "top3": [
+     "Beagle",
+     "Beagle",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t04",
+    "lang": "th",
+    "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่",
+    "relevant": [
+     "Pug"
+    ],
+    "top3": [
+     "Pug",
+     "Shih Tzu",
+     "Beagle"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t05",
+    "lang": "th",
+    "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม",
+    "relevant": [
+     "Pembroke Welsh Corgi"
+    ],
+    "top3": [
+     "Pembroke Welsh Corgi",
+     "Pembroke Welsh Corgi",
+     "Labrador Retriever"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t06",
+    "lang": "th",
+    "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า",
+    "relevant": [
+     "Great Dane"
+    ],
+    "top3": [
+     "Great Dane",
+     "Great Dane",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t07",
+    "lang": "th",
+    "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน",
+    "relevant": [
+     "Dobermann"
+    ],
+    "top3": [
+     "Dobermann",
+     "Dobermann",
+     "Dobermann"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t08",
+    "lang": "th",
+    "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด",
+    "relevant": [
+     "Samoyed"
+    ],
+    "top3": [
+     "Samoyed",
+     "Samoyed",
+     "Pug"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t09",
+    "lang": "th",
+    "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม",
+    "relevant": [
+     "Yorkshire Terrier"
+    ],
+    "top3": [
+     "Yorkshire Terrier",
+     "Yorkshire Terrier",
+     "Jack Russell Terrier"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   },
+   {
+    "id": "t10",
+    "lang": "th",
+    "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ",
+    "relevant": [
+     "German Shepherd"
+    ],
+    "top3": [
+     "German Shepherd",
+     "German Shepherd",
+     "German Shepherd"
+    ],
+    "r1": 1.0,
+    "r3": 1.0,
+    "r5": 1.0,
+    "mrr": 1.0
+   }
+  ]
+ },
+ "min_score_sweep": [
+  {
+   "min_score": 0.0,
+   "answerable_kept": 1.0,
+   "unanswerable_rejected": 0.0,
+   "offtopic_rejected": 0.0,
+   "uncovered_breed_rejected": 0.0,
+   "balanced_accuracy": 0.5
+  },
+  {
+   "min_score": 0.3,
+   "answerable_kept": 1.0,
+   "unanswerable_rejected": 0.0,
+   "offtopic_rejected": 0.0,
+   "uncovered_breed_rejected": 0.0,
+   "balanced_accuracy": 0.5
+  },
+  {
+   "min_score": 0.35,
+   "answerable_kept": 1.0,
+   "unanswerable_rejected": 0.1,
+   "offtopic_rejected": 0.167,
+   "uncovered_breed_rejected": 0.0,
+   "balanced_accuracy": 0.55
+  },
+  {
+   "min_score": 0.4,
+   "answerable_kept": 1.0,
+   "unanswerable_rejected": 0.4,
+   "offtopic_rejected": 0.667,
+   "uncovered_breed_rejected": 0.0,
+   "balanced_accuracy": 0.7
+  },
+  {
+   "min_score": 0.45,
+   "answerable_kept": 1.0,
+   "unanswerable_rejected": 0.7,
+   "offtopic_rejected": 1.0,
+   "uncovered_breed_rejected": 0.25,
+   "balanced_accuracy": 0.85
+  },
+  {
+   "min_score": 0.5,
+   "answerable_kept": 1.0,
+   "unanswerable_rejected": 0.8,
+   "offtopic_rejected": 1.0,
+   "uncovered_breed_rejected": 0.5,
+   "balanced_accuracy": 0.9
+  },
+  {
+   "min_score": 0.55,
+   "answerable_kept": 0.906,
+   "unanswerable_rejected": 0.9,
+   "offtopic_rejected": 1.0,
+   "uncovered_breed_rejected": 0.75,
+   "balanced_accuracy": 0.903
+  },
+  {
+   "min_score": 0.6,
+   "answerable_kept": 0.75,
+   "unanswerable_rejected": 1.0,
+   "offtopic_rejected": 1.0,
+   "uncovered_breed_rejected": 1.0,
+   "balanced_accuracy": 0.875
+  },
+  {
+   "min_score": 0.65,
+   "answerable_kept": 0.531,
+   "unanswerable_rejected": 1.0,
+   "offtopic_rejected": 1.0,
+   "uncovered_breed_rejected": 1.0,
+   "balanced_accuracy": 0.766
+  },
+  {
+   "min_score": 0.7,
+   "answerable_kept": 0.219,
+   "unanswerable_rejected": 1.0,
+   "offtopic_rejected": 1.0,
+   "uncovered_breed_rejected": 1.0,
+   "balanced_accuracy": 0.609
+  }
+ ],
+ "score_distributions": {
+  "answerable": [
+   0.6400381326675415,
+   0.7103656530380249,
+   0.7355868816375732,
+   0.6025006771087646,
+   0.711235761642456,
+   0.666247546672821,
+   0.6354433298110962,
+   0.6790181398391724,
+   0.7405602931976318,
+   0.7365128993988037,
+   0.5056740045547485,
+   0.7403150796890259,
+   0.6725956201553345,
+   0.5848845839500427,
+   0.5836552381515503,
+   0.6843913197517395,
+   0.7178375124931335,
+   0.6025341749191284,
+   0.6807594895362854,
+   0.6692425012588501,
+   0.6750330328941345,
+   0.6631903052330017,
+   0.5555830001831055,
+   0.5575445890426636,
+   0.6353362798690796,
+   0.6124684810638428,
+   0.6348998546600342,
+   0.6577467918395996,
+   0.5989878177642822,
+   0.5373257398605347,
+   0.5357760190963745,
+   0.6628813147544861
+  ],
+  "unanswerable": [
+   [
+    "uncovered_breed",
+    0.41171544790267944
+   ],
+   [
+    "uncovered_breed",
+    0.5142745971679688
+   ],
+   [
+    "uncovered_breed",
+    0.4568732678890228
+   ],
+   [
+    "uncovered_breed",
+    0.5674784779548645
+   ],
+   [
+    "off_topic",
+    0.39467453956604004
+   ],
+   [
+    "off_topic",
+    0.38187429308891296
+   ],
+   [
+    "off_topic",
+    0.43015390634536743
+   ],
+   [
+    "off_topic",
+    0.4004718065261841
+   ],
+   [
+    "off_topic",
+    0.38909268379211426
+   ],
+   [
+    "off_topic",
+    0.3249259293079376
+   ]
+  ]
+ }
+}

@@ -65,3 +65,23 @@ def test_citation_numbers_reset_per_question(ctx):
         ])
         resp = run_agent("shiba origin", ctx, client=client)
         assert [c.n for c in resp.citations] == [1]
+
+
+def test_in_scope_answer_without_tools_is_pushed_back_once(ctx):
+    client = FakeClient([
+        message("I could not find that."),                    # premature "not found", no tool call
+        message(tool_calls=[tool_call("c1", "search_breed_docs", '{"query": "dachshund badgers"}')]),
+        message("They hunted badgers [1]."),
+    ])
+    resp = run_agent("what did the dachshund hound hunt, badgers?", ctx, client=client)
+    assert [t.name for t in resp.tool_calls] == ["search_breed_docs"]
+    assert "without calling any tool" in client.requests[1]["messages"][-1]["content"]
+    assert resp.answer == "They hunted badgers [1]."
+
+
+def test_off_topic_answer_without_tools_is_accepted(ctx, monkeypatch):
+    from app.core import config
+    monkeypatch.setattr(config, "MIN_SCORE", 0.99)            # nothing is "in scope"
+    client = FakeClient([message("I only answer dog breed questions.")])
+    resp = run_agent("capital of France?", ctx, client=client)
+    assert resp.tool_calls == [] and len(client.requests) == 1

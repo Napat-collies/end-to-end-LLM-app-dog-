@@ -18,7 +18,7 @@ from app.core import config
 from app.core.llm import chat
 from app.schemas.api import AskResponse, ToolTrace
 from app.tools.registry import ToolContext, dispatch, tool_specs
-from app.tools.search_docs import CitationRegistry
+from app.tools.search_docs import CitationRegistry, is_covered
 
 SYSTEM_PROMPT = """You are Dog Breed Advisor, an assistant that helps people choose and learn about dog breeds.
 
@@ -42,6 +42,12 @@ Rules:
    If unsure which breed is meant, call search_breed_docs without the breed filter.
 """
 
+# Eval finding (a15, a16): the model sometimes says "not found" WITHOUT calling any tool.
+# A prompt rule did not fix it, so this is enforced in code: if the user's question is
+# in scope (same min_score test as the search tool) and no tool has been called yet,
+# the first tool-less answer is rejected once and the model is told to search.
+SEARCH_FIRST = ("You answered without calling any tool, but the breed documents may cover this question. "
+                "Call search_breed_docs (or query_breeds for numbers) first, then answer from the results.")
 FORCE_FINAL = "Stop calling tools now. Answer the original question using only the tool results above."
 CITE = re.compile(r"\[(\d+)\]")
 THAI = re.compile(r"[\u0E00-\u0E7F]")
@@ -88,12 +94,18 @@ def run_agent(question: str, ctx: ToolContext, client=None, max_steps: int = con
     trace: list[ToolTrace] = []
     seen: set[str] = set()
     repeat_turns = 0
+    nudged = False
     answer, stop_reason, steps = None, "max_steps", 0
 
     for step in range(1, max_steps + 1):
         steps = step
         msg = chat(messages, tools=specs, client=client)
         if not msg.tool_calls:                      # no tool requested -> this is the final answer
+            if not trace and not nudged and is_covered(question, ctx.retriever)[0]:
+                nudged = True                       # in-scope question but no tool used: push back once
+                messages.append({"role": "assistant", "content": msg.content or ""})
+                messages.append({"role": "user", "content": SEARCH_FIRST})
+                continue
             answer, stop_reason = (msg.content or "").strip(), "final_answer"
             break
 

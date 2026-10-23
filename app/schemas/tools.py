@@ -6,7 +6,7 @@ sent back to the model as a string so it can fix its own call.
 """
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class SearchDocsArgs(BaseModel):
@@ -50,5 +50,15 @@ class QueryBreedsArgs(BaseModel):
     max_avg_life_years: float | None = Field(default=None, ge=0, le=30)
     hypoallergenic: bool | None = None
     sort_by: SortColumn = "name"
-    descending: bool = False
+    descending: bool | None = None
     limit: int = Field(default=10, ge=1, le=20)
+
+    @model_validator(mode="after")
+    def numeric_sort_needs_direction(self):
+        # Eval finding (a06): the model sent sort_by=avg_weight_kg without `descending`,
+        # silently got the LIGHTEST breeds, and answered a "heaviest" question wrongly.
+        # Making the direction explicit turns that silent error into a fixable one.
+        if self.sort_by != "name" and self.descending is None:
+            raise ValueError("when sort_by is avg_weight_kg or avg_life_years you must set descending: "
+                             "true = largest/longest first, false = smallest/shortest first")
+        return self

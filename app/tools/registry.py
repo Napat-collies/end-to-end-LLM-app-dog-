@@ -71,7 +71,9 @@ def tool_specs(db: BreedDB, retriever: Retriever) -> list[dict]:
                         "max_avg_life_years": {"type": "number"},
                         "hypoallergenic": {"type": "boolean"},
                         "sort_by": {"type": "string", "enum": ["avg_weight_kg", "avg_life_years", "name"]},
-                        "descending": {"type": "boolean", "description": "true for largest first."},
+                        "descending": {"type": "boolean",
+                                       "description": "Required with a numeric sort_by. true = largest/longest "
+                                                      "first (heaviest, longest-lived); false = smallest first."},
                         "limit": {"type": "integer", "minimum": 1, "maximum": 20},
                     },
                     "required": [],

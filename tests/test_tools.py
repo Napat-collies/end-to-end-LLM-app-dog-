@@ -75,3 +75,10 @@ def test_search_tool_numbers_citations(ctx):
 def test_search_tool_unknown_breed(ctx):
     ok, msg, _ = dispatch("search_breed_docs", '{"query": "temperament", "breed": "Komondor"}', ctx)
     assert not ok and "not in the document collection" in msg
+
+
+def test_numeric_sort_requires_direction(ctx):
+    ok, msg, _ = dispatch("query_breeds", '{"group": "Herding Group", "sort_by": "avg_weight_kg"}', ctx)
+    assert not ok and "descending" in msg
+    ok, msg, _ = dispatch("query_breeds", '{"sort_by": "avg_weight_kg", "descending": true, "limit": 1}', ctx)
+    assert ok and "descending (largest first)" in msg and "Great Dane" in msg

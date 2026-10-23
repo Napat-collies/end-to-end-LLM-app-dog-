@@ -10,7 +10,7 @@
 {"id": "a10", "lang": "th", "question": "มีสุนัขกี่สายพันธุ์ที่น้ำหนักเฉลี่ยตั้งแต่ 50 กิโลกรัมขึ้นไป", "expected_tools": ["query_breeds"], "check": {"type": "count", "gold": {"min_avg_weight_kg": 50}}}
 {"id": "a11", "lang": "en", "question": "Where does the Shiba Inu come from?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Japan", "ญี่ปุ่น"]]}}
 {"id": "a12", "lang": "en", "question": "What animal were Dachshunds originally bred to hunt?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["badger"]]}}
-{"id": "a13", "lang": "en", "question": "Which country does the Chihuahua come from?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Mexico", "เม็กซิโก"]]}}
+{"id": "a13", "lang": "en", "question": "Which country does the Chihuahua come from?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Mexico", "Mexican", "เม็กซิ"]]}, "note": "v2: added 'Mexican'/'เม็กซิ' after the correct answer 'a Mexican breed' was marked wrong by the v1 keyword check"}
 {"id": "a14", "lang": "en", "question": "What were Siberian Huskies traditionally used for?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["sled", "sledge", "sledding"]]}}
 {"id": "a15", "lang": "en", "question": "Which famous loyal dog from Japan was an Akita?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Hachik"]]}}
 {"id": "a16", "lang": "th", "question": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไร", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Phitsanulok", "พิษณุโลก"]]}}

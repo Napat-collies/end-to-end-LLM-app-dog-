@@ -89,9 +89,11 @@ class BreedDB:
         total = self.con.execute(count_sql, params).fetchone()[0]
         limit = min(args.limit, config.MAX_SQL_ROWS)
         rows = self.con.execute(sql, params + [limit]).fetchall()
+        order = "descending (largest first)" if args.descending else "ascending (smallest first)"
         return {
             "total_matches": total,
             "returned": len(rows),
+            "sorted_by": f"{args.sort_by} {order}",
             "rows": [
                 {
                     "name": r[0],

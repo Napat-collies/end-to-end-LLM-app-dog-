@@ -93,6 +93,7 @@ def main() -> None:
                                and r["expected_tools"] == ["search_breed_docs"]],
         "Both tools": [r for r in rows if r["expected_tools"] and len(r["expected_tools"]) == 2],
         "Off-topic / not covered": [r for r in rows if r["check"] in ("offtopic", "abstain")],
+        "All except off-topic": [r for r in rows if r["check"] not in ("offtopic", "abstain")],
         "All": rows,
     }
     md = ["# Agent evaluation", "",

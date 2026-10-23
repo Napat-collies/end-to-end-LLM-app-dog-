@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Breed Advisor</title>
+<style>
+  :root { --bg:#faf7f2; --card:#fff; --ink:#2b2622; --muted:#7a7068; --accent:#b5651d; --line:#e8e0d6; --err:#b42318; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1c1916; --card:#262220; --ink:#efe9e2; --muted:#a59a8f; --accent:#e0954f; --line:#3a342f; --err:#ff8a7a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui, -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  form { display:flex; gap:8px; }
+  input { flex:1; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--card); color:var(--ink); font:inherit; }
+  button { padding:12px 18px; border:0; border-radius:10px; background:var(--accent); color:#fff; font:inherit; font-weight:600; cursor:pointer; }
+  button:disabled { opacity:.6; cursor:wait; }
+  .examples { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 24px; }
+  .examples button { background:transparent; color:var(--accent); border:1px solid var(--line); font-weight:400; padding:6px 10px; font-size:.88rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:14px; }
+  .card h2 { font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+  #answer { white-space: pre-wrap; }
+  ol, ul { margin:0; padding-left:20px; }
+  li { margin:4px 0; }
+  a { color: var(--accent); }
+  code { font-size:.85rem; word-break: break-word; }
+  .meta { color:var(--muted); font-size:.85rem; }
+  .err { color: var(--err); }
+  [hidden] { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dog Breed Advisor</h1>
+  <p class="sub">Ask about temperament, care, size or life span. Answers come from Wikipedia articles and a breed database, with sources.</p>
+
+  <form id="f">
+    <input id="q" placeholder="e.g. Is a Shiba Inu good for a first-time owner?" required minlength="2" maxlength="1000">
+    <button id="go" type="submit">Ask</button>
+  </form>
+  <div class="examples" id="ex"></div>
+
+  <div id="out" hidden>
+    <div class="card"><h2>Answer</h2><div id="answer"></div><p class="meta" id="meta"></p></div>
+    <div class="card" id="srcCard"><h2>Sources</h2><ol id="sources"></ol></div>
+    <div class="card"><h2>Tool calls</h2><ul id="trace"></ul></div>
+  </div>
+</main>
+<script>
+const examples = [
+  "What is the temperament of a Shiba Inu?",
+  "Which 3 breeds are the heaviest?",
+  "ไซบีเรียนฮัสกี้ต้องออกกำลังกายมากแค่ไหน",
+  "Which hypoallergenic breeds weigh under 10 kg?",
+];
+const $ = (id) => document.getElementById(id);
+for (const e of examples) {
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = e;
+  b.onclick = () => { $("q").value = e; $("f").requestSubmit(); };
+  $("ex").appendChild(b);
+}
+function li(text) { const el = document.createElement("li"); el.textContent = text; return el; }
+
+$("f").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  $("go").disabled = true; $("go").textContent = "Thinking…";
+  $("out").hidden = false; $("answer").className = ""; $("answer").textContent = "…";
+  $("sources").replaceChildren(); $("trace").replaceChildren(); $("meta").textContent = "";
+  try {
+    const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" },
+                                        body: JSON.stringify({ question: $("q").value }) });
+    const data = await r.json();
+    if (!r.ok) throw new Error(typeof data.detail === "string" ? data.detail : `HTTP ${r.status}`);
+    $("answer").textContent = data.answer || "(empty answer)";
+    $("meta").textContent = `${data.steps} step(s) · stop reason: ${data.stop_reason}`;
+    $("srcCard").hidden = data.citations.length === 0;
+    for (const c of data.citations) {
+      const el = document.createElement("li"); el.value = c.n;
+      const a = document.createElement("a"); a.href = c.url; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = `${c.breed} — ${c.section}`; el.appendChild(a); $("sources").appendChild(el);
+    }
+    if (data.tool_calls.length === 0) $("trace").appendChild(li("No tools called."));
+    for (const t of data.tool_calls) {
+      const el = li(`step ${t.step} ${t.ok ? "✓" : "✗"} ${t.name} `);
+      const code = document.createElement("code"); code.textContent = JSON.stringify(t.arguments);
+      el.appendChild(code); $("trace").appendChild(el);
+    }
+  } catch (e) {
+    $("answer").className = "err"; $("answer").textContent = "Error: " + e.message;
+  } finally {
+    $("go").disabled = false; $("go").textContent = "Ask";
+  }
+});
+</script>
+</body>
+</html>

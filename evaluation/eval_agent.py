@@ -10,8 +10,13 @@ Baseline = the same model with no tools and no retrieval (answer_without_tools).
 
 Run:  uv run python -m evaluation.eval_agent
 Writes evaluation/results/agent.md and agent.json
+
+Held-out set (questions written AFTER the system was tuned, never used for tuning):
+     uv run python -m evaluation.eval_agent evaluation/heldout_set.jsonl
+Writes evaluation/results/agent_heldout_set.md and .json
 """
 import json
+import sys
 from pathlib import Path
 
 from app.schemas.tools import QueryBreedsArgs
@@ -58,7 +63,9 @@ def sql_match(item: dict, trace, db, gold: dict) -> bool:
 
 
 def main() -> None:
-    items = load_jsonl(HERE / "agent_set.jsonl")
+    path = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / "agent_set.jsonl"
+    items = load_jsonl(path)
+    suffix = "" if path.name == "agent_set.jsonl" else "_" + path.stem.replace("_set", "") + "_set"
     ctx = get_context()
     rows = []
     for it in items:
@@ -97,7 +104,7 @@ def main() -> None:
         "All": rows,
     }
     md = ["# Agent evaluation", "",
-          f"{len(rows)} questions. Baseline = same model, no tools, no retrieval. temperature=0.", "",
+          f"Test set: {path.name}. {len(rows)} questions. Baseline = same model, no tools, no retrieval. temperature=0.", "",
           "| Subset | n | Tool selection | SQL exec match | Answer acc. (agent) | Answer acc. (baseline) |",
           "|---|---|---|---|---|---|"]
     for name, subset in groups.items():
@@ -116,8 +123,8 @@ def main() -> None:
         md.append("None.")
 
     RESULTS.mkdir(exist_ok=True)
-    (RESULTS / "agent.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
-    (RESULTS / "agent.md").write_text("\n".join(md), encoding="utf-8")
+    (RESULTS / f"agent{suffix}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+    (RESULTS / f"agent{suffix}.md").write_text("\n".join(md), encoding="utf-8")
     print("\n".join(md))
 
 

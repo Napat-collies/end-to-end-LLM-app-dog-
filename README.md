@@ -2,9 +2,9 @@
 
 # 🐕 Dog Breed Advisor
 
-**An LLM agent that helps first-time owners choose and learn about dog breeds — in English or Thai.**
+**ผู้ช่วย AI สำหรับคนที่จะเลี้ยงสุนัขครั้งแรก ช่วยเลือกและเรียนรู้สายพันธุ์สุนัข ถามได้ทั้งภาษาไทยและภาษาอังกฤษ**
 
-It decides by itself whether a question needs the breed articles (RAG with citations) or the breed database (guarded SQL), answers only from what it finds, and says *"not found"* instead of guessing.
+agent จะตัดสินใจเองว่าคำถามแต่ละข้อต้องค้นจากบทความ (RAG พร้อมอ้างอิง) หรือจากฐานข้อมูล (SQL แบบปลอดภัย) ตอบจากข้อมูลที่ค้นเจอเท่านั้น และตอบว่า *"ไม่พบข้อมูล"* แทนการเดา
 
 ![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)
 ![Model](https://img.shields.io/badge/LLM-gemma--4--E4B--it-b5651d)
@@ -13,242 +13,286 @@ It decides by itself whether a question needs the breed articles (RAG with citat
 ![Tests](https://img.shields.io/badge/tests-43%20passing-2e7d32)
 ![Deploy](https://img.shields.io/badge/deployed%20on-Render-46E3B7?logo=render&logoColor=white)
 
-[Highlights](#-highlights) · [How it works](#-how-it-works) · [Quick start](#-quick-start) · [Results](#-results) · [Safety](#-safety) · [Limitations](#-limitations)
+[จุดเด่น](#-จุดเด่น) · [ถามอะไรได้บ้าง](#-ขอบเขตคำถาม-ถามอะไรได้บ้าง) · [การทำงาน](#-ระบบทำงานอย่างไร) · [วิธีติดตั้ง](#-วิธีติดตั้งและรัน) · [ผลการประเมิน](#-ผลการประเมิน) · [ความปลอดภัย](#️-ความปลอดภัย) · [ข้อจำกัด](#️-ข้อจำกัด)
 
 </div>
 
 ---
 
-## ✨ Highlights
+## ✨ จุดเด่น
 
 | | |
 |---|---|
-| 🔀 **Agent picks the tool** | Descriptive questions go to `search_breed_docs`, numeric ones to `query_breeds`, mixed ones to both |
-| 📚 **Answers cite sources** | Every fact from the articles carries a `[n]` that links back to the Wikipedia page |
-| 🇹🇭 **Thai and English** | Multilingual `bge-m3` finds English articles from Thai questions — BM25 finds none |
-| 🛡️ **Safe by construction** | The model never writes SQL; every tool argument is validated with Pydantic; the database is read-only |
-| 📏 **Measured, not guessed** | `min_score`, chunk size and retriever were all chosen from evaluation numbers, then checked on a held-out set |
-
-**Example questions**
-
-| Type | Example | Tool used |
-|---|---|---|
-| Descriptive | *"ชิบะอินุมาจากประเทศอะไร"* · *"Is a Golden Retriever good with children?"* | `search_breed_docs` — RAG over 40 Wikipedia articles |
-| Numeric | *"Which 3 breeds are the heaviest?"* · *"How many breeds are in the Toy Group?"* | `query_breeds` — read-only SQL over 283 breeds |
-| Both | *"What is a Beagle's temperament, and how heavy is it?"* | both tools |
+| 🔀 **agent เลือกเครื่องมือเอง** | คำถามเชิงบรรยายใช้ `search_breed_docs` คำถามตัวเลขใช้ `query_breeds` คำถามผสมใช้ทั้งสองแบบ |
+| 📚 **ตอบพร้อมแหล่งอ้างอิง** | ข้อมูลจากบทความทุกข้อมีเลข `[n]` ที่ลิงก์กลับไปหน้า Wikipedia ต้นฉบับ |
+| 🇹🇭 **ไทยและอังกฤษ** | `bge-m3` เป็นโมเดลหลายภาษา ถามเป็นไทยก็ค้นบทความภาษาอังกฤษเจอ (BM25 หาไม่เจอเลย) |
+| 🛡️ **ปลอดภัยตั้งแต่การออกแบบ** | โมเดลไม่ได้เขียน SQL เอง argument ของทุก tool ผ่านการตรวจด้วย Pydantic และฐานข้อมูลเปิดแบบอ่านอย่างเดียว |
+| 📏 **ตัดสินใจจากตัวเลข ไม่ใช่การเดา** | `min_score`, ขนาด chunk และวิธีค้น เลือกจากผลการประเมิน แล้วตรวจซ้ำด้วย held-out set |
 
 ---
 
-## 🧠 How it works
+## 💬 ขอบเขตคำถาม: ถามอะไรได้บ้าง
+
+### ✅ แบบที่ 1 คำถามเชิงบรรยาย (ค้นจากบทความ Wikipedia)
+
+ถามเรื่อง **นิสัย, ประวัติ, ต้นกำเนิด, การดูแล, สุขภาพ, ขน, การออกกำลังกาย** ได้เฉพาะ **40 สายพันธุ์** ต่อไปนี้
+
+| | | | |
+|---|---|---|---|
+| Labrador Retriever (ลาบราดอร์) | Golden Retriever (โกลเด้น) | German Shepherd (เยอรมันเชพเพิร์ด) | French Bulldog (เฟรนช์บูลด็อก) |
+| Bulldog (บูลด็อก) | Poodle (พุดเดิ้ล) | Beagle (บีเกิ้ล) | Rottweiler (ร็อตไวเลอร์) |
+| Dachshund (ดัชชุนด์) | Pembroke Welsh Corgi (คอร์กี้) | Siberian Husky (ไซบีเรียนฮัสกี้) | Shih Tzu (ชิสุ) |
+| Pomeranian (ปอมเมอเรเนียน) | Chihuahua (ชิวาวา) | Pug (ปั๊ก) | Boxer (บ็อกเซอร์) |
+| Great Dane (เกรทเดน) | Dobermann (โดเบอร์แมน) | Border Collie (บอร์เดอร์คอลลี่) | Shiba Inu (ชิบะอินุ) |
+| Akita (อาคิตะ) | Bernese Mountain Dog (เบอร์นีส) | Cavalier King Charles Spaniel (คาวาเลียร์) | Yorkshire Terrier (ยอร์คเชียร์) |
+| Maltese (มอลทีส) | Bichon Frise (บิชอง) | Basenji (บาเซนจิ) | Dalmatian (ดัลเมเชียน) |
+| Saint Bernard (เซนต์เบอร์นาร์ด) | Greyhound (เกรย์ฮาวด์) | Australian Shepherd (ออสเตรเลียนเชพเพิร์ด) | Shetland Sheepdog (เชตแลนด์) |
+| Bull Terrier (บูลเทอร์เรีย) | Jack Russell Terrier (แจ็ครัสเซลล์) | Samoyed (ซามอยด์) | Alaskan Malamute (อะแลสกันมาลามิวท์) |
+| Thai Ridgeback (ไทยหลังอาน) | Thai Bangkaew (บางแก้ว) | Chow Chow (เชาเชา) | Newfoundland (นิวฟันด์แลนด์) |
+
+**ตัวอย่างคำถาม**
+- ชิบะอินุมาจากประเทศอะไร
+- ไซบีเรียนฮัสกี้ผลัดขนบ่อยแค่ไหน
+- Golden Retriever เข้ากับเด็กเล็กได้ไหม
+- What were Dachshunds originally bred to hunt?
+
+### ✅ แบบที่ 2 คำถามตัวเลข (ค้นจากฐานข้อมูล)
+
+ถามแบบ **เรียงลำดับ / นับจำนวน / กรอง** ได้ทั้ง **283 สายพันธุ์** จากข้อมูลเหล่านี้
+
+| ข้อมูล | ตัวอย่างคำถาม |
+|---|---|
+| น้ำหนักเฉลี่ย (กิโลกรัม) | พันธุ์ไหนหนักที่สุด 3 อันดับ · พันธุ์ไหนหนักไม่เกิน 5 กิโล |
+| อายุขัยเฉลี่ย (ปี) | พันธุ์ไหนอายุยืนที่สุด · มีกี่พันธุ์ที่อายุยืนเกิน 15 ปี |
+| กลุ่มพันธุ์ (ตาม AKC) | มีกี่พันธุ์ใน Toy Group · พันธุ์ไหนใน Herding Group หนักที่สุด |
+| hypoallergenic (ขนไม่ค่อยก่อภูมิแพ้) | พันธุ์ hypoallergenic ที่หนักไม่เกิน 10 กิโล |
+
+กลุ่มพันธุ์ที่มีในฐานข้อมูล: `Herding Group` · `Hound Group` · `Non-Sporting Group` · `Sporting Group` · `Terrier Group` · `Toy Group` · `Working Group` · `Foundation Stock Service` · `Miscellaneous Class`
+
+### ✅ แบบที่ 3 คำถามผสม (ใช้ทั้งสองแบบ)
+
+- Beagle นิสัยเป็นยังไง และหนักกี่กิโล
+- Pug มีปัญหาการหายใจเพราะอะไร และอายุขัยเฉลี่ยกี่ปี
+
+### ❌ เรื่องที่ระบบไม่ได้ออกแบบมาให้ตอบ
+
+| ประเภท | ตัวอย่าง | ระบบจะทำอะไร |
+|---|---|---|
+| การดูแลสุนัขทั่วไป | อาหารที่อันตราย, การฝึกขับถ่าย, ค่าวัคซีน | บอกว่าไม่มีข้อมูลในเอกสาร |
+| นิสัยของพันธุ์ที่ไม่อยู่ใน 40 พันธุ์ | Shar Pei, Xoloitzcuintli | **อาจตอบไม่ตรง** เพราะยังเป็นเรื่องสุนัข ระบบจึงอาจดึงบทความพันธุ์อื่นมา |
+| ส่วนสูง, ราคา, สถิติโลก | Labrador สูงเท่าไหร่ | ฐานข้อมูลไม่มีข้อมูลเหล่านี้ |
+| เรื่องที่ไม่เกี่ยวกับสุนัข | เมืองหลวงของฝรั่งเศส | ปฏิเสธว่าตอบได้เฉพาะเรื่องสายพันธุ์สุนัข |
+
+> ⚠️ **ไม่ใช่คำแนะนำทางสัตวแพทย์** เรื่องสุขภาพควรปรึกษาสัตวแพทย์เสมอ
+
+---
+
+## 🧠 ระบบทำงานอย่างไร
 
 ```mermaid
 flowchart LR
-    U[User question<br/>EN or TH] --> API[FastAPI /api/ask<br/>or CLI]
+    U[คำถามของผู้ใช้<br/>ไทย / อังกฤษ] --> API[FastAPI /api/ask<br/>หรือ CLI]
     API --> A[Agent loop<br/>gemma-4-E4B-it, temp 0<br/>max_steps = 5]
     A -- tool_calls --> D[Dispatcher<br/>allow-list + json.loads<br/>+ Pydantic validation]
     D --> S[search_breed_docs]
     D --> Q[query_breeds]
     S --> R[Retriever<br/>bge-m3 cosine<br/>min_score floor]
-    R --> IDX[(Chunk index<br/>40 Wikipedia articles)]
-    Q --> DB[(SQLite, read-only<br/>283 breeds from dogapi.dog)]
-    S -- numbered passages --> A
-    Q -- rows / count --> A
-    D -- "ERROR: ... (model retries)" --> A
-    A --> O[AskResponse<br/>answer + citations + tool trace]
+    R --> IDX[(Chunk index<br/>40 บทความ Wikipedia)]
+    Q --> DB[(SQLite แบบอ่านอย่างเดียว<br/>283 พันธุ์จาก dogapi.dog)]
+    S -- ข้อความที่มีเลข n --> A
+    Q -- แถว / จำนวน --> A
+    D -- "ERROR: ... (โมเดลแก้เอง)" --> A
+    A --> O[AskResponse<br/>คำตอบ + อ้างอิง + tool trace]
 ```
 
-1. The agent sends the question and two tool definitions to `gemma-4-E4B-it` (temperature 0).
-2. When the model asks for a tool, the **dispatcher** checks the tool name against an allow-list, parses the JSON arguments and validates them with Pydantic. Anything invalid goes back to the model as `ERROR: ...` so it can repair its own call.
-3. Tool results are wrapped as `TOOL RESULT (untrusted data) <<< … >>>` before the model sees them.
-4. The loop ends when the model answers, after `max_steps` turns, or after repeated identical calls — then a final answer is forced with tools disabled.
+1. agent ส่งคำถามพร้อมรายการ tool 2 ตัวให้ `gemma-4-E4B-it` (temperature 0 เพื่อให้ผลเหมือนเดิมทุกครั้ง)
+2. เมื่อโมเดลขอเรียก tool **dispatcher** จะตรวจว่าชื่อ tool อยู่ในรายการที่อนุญาต แปลง argument จาก JSON แล้วตรวจด้วย Pydantic ถ้าไม่ผ่าน จะส่ง `ERROR: ...` กลับไปให้โมเดลแก้เอง
+3. ผลจาก tool ถูกห่อเป็น `TOOL RESULT (untrusted data) <<< … >>>` ก่อนส่งให้โมเดลอ่าน
+4. loop จบเมื่อโมเดลตอบ, ครบ `max_steps` หรือเรียก tool ซ้ำเดิม แล้วบังคับให้ตอบโดยปิด tool
 
-### Course capability families
+### กลุ่มความสามารถตามเกณฑ์รายวิชา
 
-| # | Family | Where |
+| # | หมวด | อยู่ที่ไหน |
 |---|---|---|
-| 1 | Structured output + schema validation | `app/schemas/` — Pydantic contracts for every tool argument; invalid calls are returned to the model to repair |
-| 2 | Retrieval / RAG with citations | `app/retrieval/` — section-aware chunking (250 words, 15% overlap), bge-m3, cosine search, `min_score` floor, `[n]` citations |
-| **3** | **Retrieval evaluation** | `evaluation/` — Recall@k / MRR vs a BM25 baseline, chunk-size and `min_score` sweeps, end-to-end agent eval vs a no-tools baseline on a tuning set and a held-out set |
-| **4** | **Agent loop with tools** | `app/services/agent.py` — native tool calling, allow-listed dispatcher, `max_steps`, repeated-call guard, search-first guardrail |
-| **5** | **Guarded SQL** | `app/tools/query_breeds.py` — read-only connection, SELECT-only guard, `?` parameter binding, allow-listed sort columns |
-| 6 | Served interface | `app/api/` — FastAPI REST endpoint and a web page, deployed on Render |
+| 1 | Structured output + schema validation | `app/schemas/` — Pydantic ตรวจ argument ของทุก tool ถ้าไม่ผ่านส่งกลับให้โมเดลแก้ |
+| 2 | Retrieval / RAG พร้อมอ้างอิง | `app/retrieval/` — ตัดตามหัวข้อ (250 คำ ซ้อน 15%), bge-m3, cosine, `min_score` floor, อ้างอิง `[n]` |
+| **3** | **Retrieval evaluation** | `evaluation/` — Recall@k / MRR เทียบ BM25, sweep ขนาด chunk และ `min_score`, ประเมิน agent เทียบแบบไม่มี tool ทั้งชุดที่ใช้ปรับระบบและ held-out set |
+| **4** | **Agent loop with tools** | `app/services/agent.py` — native tool calling, allow-list, `max_steps`, ตรวจการเรียกซ้ำ, บังคับค้นก่อนตอบว่าไม่พบ |
+| **5** | **Guarded SQL** | `app/tools/query_breeds.py` — อ่านอย่างเดียว, อนุญาตเฉพาะ SELECT, `?` parameter binding, คอลัมน์เรียงลำดับจาก allow-list |
+| 6 | Served interface | `app/api/` — FastAPI + หน้าเว็บ, deploy บน Render |
 
 ---
 
-## 🚀 Quick start
+## 🚀 วิธีติดตั้งและรัน
 
-> Requires [uv](https://docs.astral.sh/uv/) and access to the class LLM proxy.
+> ต้องมี [uv](https://docs.astral.sh/uv/) และสิทธิ์ใช้ LLM proxy ของรายวิชา
 
-**1. Install and configure**
+**1. ติดตั้งและตั้งค่า**
 
 ```bash
 uv sync
 cp .env.example .env        # Windows: copy .env.example .env
 ```
 
-Fill in `.env` (this file is git-ignored — never commit it):
+ใส่ค่าในไฟล์ `.env` (ไฟล์นี้อยู่ใน `.gitignore` ห้าม commit เด็ดขาด)
 
 ```
 OPENAI_API_KEY=...
 OPENAI_BASE_URL=...
 ```
 
-**2. Check the connection** (chat, embeddings and tool calling)
+**2. ทดสอบการเชื่อมต่อ** (แชท, embedding และ tool calling)
 
 ```bash
 uv run python -m scripts.check_connection
 ```
 
-**3. Build the database and the vector index**
+**3. สร้างฐานข้อมูลและ index**
 
 ```bash
-uv run python -m scripts.build_db        # SQLite from data/raw/dogapi_breeds.json
-uv run python -m scripts.build_index     # chunks + bge-m3 embeddings (cached in data/cache/)
+uv run python -m scripts.build_db        # สร้าง SQLite จาก data/raw/dogapi_breeds.json
+uv run python -m scripts.build_index     # ตัด chunk + embed ด้วย bge-m3 (cache ไว้ใน data/cache/)
 ```
 
-**4. Run**
+**4. รัน**
 
 ```bash
-uv run python -m scripts.ask "Which 3 breeds are the heaviest?"     # terminal
-uv run uvicorn app.api.main:app --reload                          # web app → http://127.0.0.1:8000
+uv run python -m scripts.ask "Which 3 breeds are the heaviest?"     # ถามผ่าน terminal
+uv run uvicorn app.api.main:app --reload                          # หน้าเว็บ → http://127.0.0.1:8000
 ```
 
 <details>
-<summary><b>Re-downloading the raw data (optional)</b></summary>
+<summary><b>ดาวน์โหลดข้อมูลดิบใหม่ (ไม่บังคับ)</b></summary>
 
-The raw data is already committed in `data/raw/`. To fetch it again, first add
-`WIKI_CONTACT=<your email or GitHub URL>` to `.env` — Wikipedia's User-Agent policy requires contact
-information, and requests without it are blocked with HTTP 403 — then run:
+ข้อมูลดิบอยู่ใน `data/raw/` แล้ว ถ้าต้องการดึงใหม่ ให้เพิ่ม `WIKI_CONTACT=<อีเมลหรือลิงก์ GitHub>` ใน `.env` ก่อน
+เพราะนโยบาย User-Agent ของ Wikipedia กำหนดให้ต้องมีช่องทางติดต่อ ไม่อย่างนั้นจะโดนบล็อกด้วย HTTP 403 แล้วรัน
 
 ```bash
-uv run python -m scripts.fetch_data      # 40 Wikipedia articles + dogapi.dog breed table
+uv run python -m scripts.fetch_data      # บทความ Wikipedia 40 เรื่อง + ตารางจาก dogapi.dog
 ```
 </details>
 
 <details>
-<summary><b>Deploying on Render</b></summary>
+<summary><b>Deploy บน Render</b></summary>
 
-| Setting | Value |
+| ช่อง | ค่า |
 |---|---|
 | Language | Python 3 |
 | Build command | `uv sync --frozen && uv run python -m scripts.build_db && uv run python -m scripts.build_index` |
 | Start command | `uv run uvicorn app.api.main:app --host 0.0.0.0 --port $PORT` |
-| Environment | `OPENAI_API_KEY`, `OPENAI_BASE_URL`, and optionally `ACCESS_CODE`, `MAX_ASKS_PER_HOUR` (default 60) |
+| Environment | `OPENAI_API_KEY`, `OPENAI_BASE_URL` และ (ไม่บังคับ) `ACCESS_CODE`, `MAX_ASKS_PER_HOUR` (ค่าเริ่มต้น 60) |
 
-With `ACCESS_CODE` set, the page must be opened as `https://<app>.onrender.com/?code=<ACCESS_CODE>`,
-so a public link cannot use the class proxy key. Free instances sleep after 15 minutes without traffic;
-the first request afterwards takes about a minute.
+ถ้าตั้ง `ACCESS_CODE` ต้องเปิดหน้าเว็บผ่าน `https://<app>.onrender.com/?code=<ACCESS_CODE>`
+เพื่อไม่ให้ใครก็ได้ใช้คีย์ของ proxy แผนฟรีจะหลับหลังไม่มีคนใช้ 15 นาที และคำขอแรกหลังจากนั้นใช้เวลาประมาณ 1 นาที
 </details>
 
 ---
 
-## 📊 Results
+## 📊 ผลการประเมิน
 
-All numbers come from `evaluation/results/` and are reproducible with temperature 0.
+ตัวเลขทั้งหมดมาจาก `evaluation/results/` และรันซ้ำได้ด้วย temperature 0
 
 ```bash
-uv run python -m evaluation.eval_retrieval                            # retrieval + sweeps
-uv run python -m evaluation.eval_agent                                # agent, tuning set
+uv run python -m evaluation.eval_retrieval                            # retrieval + sweep
+uv run python -m evaluation.eval_agent                                # agent, ชุดที่ใช้ปรับระบบ
 uv run python -m evaluation.eval_agent evaluation/heldout_set.jsonl   # agent, held-out set
-uv run pytest                                                         # 43 offline unit tests
+uv run pytest                                                         # unit test 43 ข้อ (ไม่ต้องใช้คีย์)
 ```
 
-### Retrieval — dense beats the BM25 baseline
+### การค้นเอกสาร: dense ชนะ baseline BM25
 
-32 labelled questions (22 EN / 10 TH), chunk size 250 words.
+คำถามที่มีเฉลย 32 ข้อ (อังกฤษ 22 / ไทย 10), chunk 250 คำ
 
-| Retriever | Recall@1 | Recall@5 | MRR@10 | Recall@5 EN | Recall@5 TH |
+| วิธีค้น | Recall@1 | Recall@5 | MRR@10 | Recall@5 อังกฤษ | Recall@5 ไทย |
 |---|---:|---:|---:|---:|---:|
 | BM25 (baseline) | 0.672 | 0.688 | 0.688 | 1.00 | **0.00** |
-| **Dense bge-m3 (used)** | **0.922** | **1.000** | **0.956** | 1.00 | **1.00** |
+| **Dense bge-m3 (ที่ใช้)** | **0.922** | **1.000** | **0.956** | 1.00 | **1.00** |
 | Hybrid (RRF) | 0.891 | 1.000 | 0.940 | 1.00 | 1.00 |
 
-BM25 finds nothing for Thai questions because Thai words never match the English articles.
-Chunk size (100 / 250 / 500 words) made no measurable difference on this document-level metric
-(MRR 0.961 / 0.956 / 0.956), so the cheaper 250 was kept.
+BM25 หาคำถามภาษาไทยไม่เจอเลย เพราะคำไทยไม่ตรงกับคำในบทความภาษาอังกฤษ
+ส่วนขนาด chunk (100 / 250 / 500 คำ) ไม่มีผลที่วัดได้ใน metric ระดับบทความนี้ (MRR 0.961 / 0.956 / 0.956) จึงใช้ 250 คำ ซึ่งมีจำนวน chunk น้อยกว่า
 
-### `min_score` — the measured improvement over the naive default
+### `min_score`: การปรับปรุงที่วัดได้เมื่อเทียบกับค่าเริ่มต้น
 
-32 answerable + 10 unanswerable questions.
+คำถามที่ตอบได้ 32 ข้อ + ตอบไม่ได้ 10 ข้อ
 
-| min_score | Answerable kept | Unanswerable rejected |
+| min_score | ตอบได้ แล้วยังตอบ | ตอบไม่ได้ แล้วปฏิเสธถูก |
 |---|---:|---:|
-| 0.00 — naive default, no floor | 1.00 | 0.00 |
-| 0.45 — first guess | 1.00 | 0.70 |
-| **0.50 — chosen** | **1.00** | **0.80** |
+| 0.00 — ไม่ตั้ง floor | 1.00 | 0.00 |
+| 0.45 — ค่าที่เดาไว้ตอนแรก | 1.00 | 0.70 |
+| **0.50 — เลือกใช้** | **1.00** | **0.80** |
 | 0.55 | 0.91 | 0.90 |
 
-0.55 is marginally higher on balanced accuracy but refuses 3 answerable questions, so 0.50 was kept.
-Off-topic questions are all rejected; dog breeds that are *not* in the corpus are only half rejected.
+0.55 ได้ balanced accuracy สูงกว่าเล็กน้อย แต่ต้องปฏิเสธคำถามที่ตอบได้ 3 ข้อ จึงเลือก 0.50
+คำถามนอกเรื่องถูกปฏิเสธครบ แต่พันธุ์ที่ไม่มีในคลังถูกปฏิเสธเพียงครึ่งหนึ่ง เพราะยังเป็นเรื่องสุนัข
 
-### Agent — vs. the same model without tools
+### Agent: เทียบกับโมเดลเดียวกันที่ไม่มี tool
 
-| Test set | Agent | No-tools baseline |
+| ชุดทดสอบ | Agent | ไม่มี tool (baseline) |
 |---|---:|---:|
-| Tuning set, v1 (22 questions) | 0.86 | 0.36 |
-| Tuning set, v3 after two code fixes | 1.00 | 0.36 |
-| **Held-out set (20), automatic check** | **0.55** | **0.20** |
-| Held-out set, manual review | 15 ✓ · 2 partial · 3 ✗ | — |
+| ชุดที่ใช้ปรับระบบ v1 (22 ข้อ) | 0.86 | 0.36 |
+| ชุดที่ใช้ปรับระบบ v3 (หลังแก้ด้วยโค้ด 2 จุด) | 1.00 | 0.36 |
+| **Held-out set (20 ข้อ) ตรวจอัตโนมัติ** | **0.55** | **0.20** |
+| Held-out set ตรวจด้วยตา | ถูก 15 · ถูกบางส่วน 2 · ผิด 3 | — |
 
-> **The drop from 1.00 to 0.55 is the honest number.** The tuning-set score was optimistic.
-> Of the 9 automatic failures on the held-out set, 4 are correct refusals the keyword checker missed,
-> 2 are partial answers, and 3 are real errors: a regression caused by the v2 fix, a retrieval miss
-> (right article, wrong paragraph) and an ambiguous question.
-> See [`heldout_manual_review.md`](evaluation/results/heldout_manual_review.md).
+> **0.55 คือตัวเลขที่ซื่อสัตย์** ส่วน 1.00 บนชุดที่ใช้ปรับระบบสูงเกินจริง
+> ใน 9 ข้อที่ตัวตรวจอัตโนมัติให้ผิด มี 4 ข้อที่ระบบปฏิเสธถูกแต่ตัวตรวจไม่รู้จักคำที่ใช้, 2 ข้อตอบได้บางส่วน
+> และ 3 ข้อผิดจริง คือ บั๊กที่เกิดจากการแก้ใน v2, การค้นเจอบทความถูกแต่ได้ย่อหน้าผิด และคำถามที่กำกวม
+> ดูรายละเอียดที่ [`heldout_manual_review.md`](evaluation/results/heldout_manual_review.md)
 
-| Test set | Size | Purpose |
+| ชุดทดสอบ | จำนวน | ใช้ทำอะไร |
 |---|---:|---|
-| `retrieval_set.jsonl` | 32 | Retrieval metrics; each question labelled with the breed whose article answers it |
-| `unanswerable_set.jsonl` | 10 | Off-topic and uncovered-breed questions for the `min_score` sweep |
-| `agent_set.jsonl` | 22 | End-to-end agent eval, **used while tuning** |
-| `heldout_set.jsonl` | 20 | Written by the project owner **after** tuning, never used to change the system |
+| `retrieval_set.jsonl` | 32 | วัดการค้นเอกสาร แต่ละข้อระบุว่าคำตอบอยู่ในบทความพันธุ์ไหน |
+| `unanswerable_set.jsonl` | 10 | คำถามนอกเรื่องและพันธุ์ที่ไม่มีในคลัง ใช้เลือก `min_score` |
+| `agent_set.jsonl` | 22 | ประเมิน agent ทั้งระบบ **ใช้ระหว่างปรับระบบ** |
+| `heldout_set.jsonl` | 20 | ผู้จัดทำเขียน**หลัง**ปรับระบบเสร็จ และไม่เคยใช้แก้ระบบ |
 
-SQL gold answers are computed from the database at evaluation time by running a gold filter, so they always match the data.
+เฉลยของคำถาม SQL คำนวณจากฐานข้อมูลตอนรันด้วยตัวกรองเฉลย จึงตรงกับข้อมูลจริงเสมอ
 
 ---
 
-## 🛡️ Safety
+## 🛡️ ความปลอดภัย
 
-| Risk | Protection |
+| ความเสี่ยง | วิธีป้องกัน |
 |---|---|
-| SQL injection | The model fills a Pydantic form; SQL is built from fixed fragments with `?` binding; sort columns come from an allow-list; SELECT-only guard; database opened `mode=ro` |
-| Bad tool calls | Allow-listed tools only; `json.loads` in `try/except`; Pydantic validation; errors fed back to the model instead of crashing |
-| Runaway loops | `max_steps = 5`, repeated-call detection, forced final answer with tools disabled |
-| Prompt injection in articles | Tool output wrapped as untrusted data; read-only tools mean a fooled model cannot change anything |
-| Guessing | `min_score` floor judged on the user's question → `NO_RESULTS` → "not found" |
-| Leaked secrets | Key and URL only from environment variables; `.env` is git-ignored |
-| Public key abuse | Optional `ACCESS_CODE` and an hourly question budget on the deployed app |
-| Proxy errors | Retry with backoff; API maps failures to 429 / 502 / 504 |
+| SQL injection | โมเดลกรอกแบบฟอร์ม Pydantic แทนการเขียน SQL, SQL ประกอบจากชิ้นส่วนคงที่ด้วย `?` binding, คอลัมน์เรียงลำดับจาก allow-list, อนุญาตเฉพาะ SELECT, เปิดฐานข้อมูลแบบ `mode=ro` |
+| เรียก tool ผิด | เรียกได้เฉพาะ tool ในรายการที่อนุญาต, `json.loads` อยู่ใน `try/except`, ตรวจด้วย Pydantic, ส่ง error กลับให้โมเดลแก้แทนการ crash |
+| loop ไม่จบ | `max_steps = 5`, ตรวจการเรียกซ้ำ, บังคับตอบโดยปิด tool |
+| prompt injection ในบทความ | ห่อผล tool เป็นข้อมูลที่ไม่น่าเชื่อถือ และ tool ทุกตัวอ่านอย่างเดียว ต่อให้โมเดลถูกหลอกก็แก้ไขอะไรไม่ได้ |
+| ตอบเดา | `min_score` วัดจากคำถามของผู้ใช้ → `NO_RESULTS` → ตอบว่าไม่พบข้อมูล |
+| คีย์หลุด | อ่านคีย์และ URL จาก environment เท่านั้น, `.env` อยู่ใน `.gitignore` |
+| คนอื่นใช้คีย์ผ่านเว็บสาธารณะ | `ACCESS_CODE` (ไม่บังคับ) และจำกัดจำนวนคำถามต่อชั่วโมงบนแอปที่ deploy |
+| proxy มีปัญหา | ลองใหม่อัตโนมัติ และ API แปลงความผิดพลาดเป็นรหัส 429 / 502 / 504 |
 
 ---
 
-## 🗂️ Project structure
+## 🗂️ โครงสร้างโปรเจกต์
 
 ```
 app/
-├── core/         config (all settings) · LLM client (the only place that calls the proxy)
-├── schemas/      Pydantic contracts: tool arguments, API request/response, chunks
+├── core/         ค่าตั้งทั้งหมด · LLM client (จุดเดียวที่เรียก proxy)
+├── schemas/      Pydantic: argument ของ tool, request/response ของ API, chunk
 ├── retrieval/    chunking · embedding cache · BM25 baseline · dense/hybrid retriever
-├── tools/        search_breed_docs · query_breeds (guarded SQL) · allow-listed dispatcher
-├── services/     agent loop · shared context
-└── api/          FastAPI app + web page
+├── tools/        search_breed_docs · query_breeds (guarded SQL) · dispatcher
+├── services/     agent loop · context ที่ใช้ร่วมกัน
+└── api/          FastAPI + หน้าเว็บ
 scripts/          check_connection · fetch_data · build_db · build_index · ask
-evaluation/       test sets · metrics · eval_retrieval · eval_agent · results/
-tests/            offline unit tests with a fake LLM and fake embeddings
-data/             wiki_breeds.txt (corpus list) · raw/ (committed source data)
+evaluation/       ชุดทดสอบ · metrics · eval_retrieval · eval_agent · results/
+tests/            unit test แบบออฟไลน์ (LLM และ embedding จำลอง)
+data/             wiki_breeds.txt (รายชื่อพันธุ์ในคลัง) · raw/ (ข้อมูลดิบที่ commit ไว้)
 ```
 
 ---
 
-## ⚠️ Limitations
+## ⚠️ ข้อจำกัด
 
-- **Coverage:** the articles cover 40 breeds and the table 283. General dog-care questions (feeding, training, costs) are outside the corpus, so the agent refuses them where a no-tools model gives an ungrounded answer.
-- **Retrieval metric is document-level:** it cannot see when the right article but the wrong paragraph is retrieved.
-- **Answer checking is keyword-based:** it misses correctly phrased refusals and cannot judge free-text content, so held-out answers were also reviewed by hand.
-- **Small test sets:** a difference of one or two questions may be noise.
-- **Data:** weights and life spans are breed averages from one source. Not veterinary advice.
+- **ขอบเขตข้อมูล:** บทความมี 40 พันธุ์ ตารางมี 283 พันธุ์ และไม่มีเรื่องการดูแลสุนัขทั่วไป (อาหาร, การฝึก, ค่าใช้จ่าย) ระบบจึงปฏิเสธคำถามเหล่านี้ ในขณะที่โมเดลที่ไม่มี tool จะตอบแบบไม่มีแหล่งอ้างอิง
+- **metric ของการค้นวัดระดับบทความ:** มองไม่เห็นกรณีที่ค้นเจอบทความถูกแต่ได้ย่อหน้าผิด
+- **ตัวตรวจคำตอบใช้คำค้น:** ไม่รู้จักคำปฏิเสธบางแบบ และตัดสินเนื้อหาของคำตอบอิสระไม่ได้ จึงตรวจ held-out set ด้วยตาอีกรอบ
+- **ชุดทดสอบเล็ก:** ผลต่าง 1–2 ข้ออาจเป็นแค่ความบังเอิญ
+- **ข้อมูล:** น้ำหนักและอายุขัยเป็นค่าเฉลี่ยจากแหล่งเดียว และระบบนี้ไม่ใช่คำแนะนำทางสัตวแพทย์
 
-## 📄 Data and licences
+## 📄 แหล่งข้อมูลและสัญญาอนุญาต
 
-- Breed articles — [Wikipedia](https://en.wikipedia.org), CC BY-SA 4.0. Each chunk keeps its source URL, shown as the citation.
-- Breed table — [dogapi.dog](https://dogapi.dog), MIT licence.
+- บทความสายพันธุ์ — [Wikipedia](https://en.wikipedia.org), CC BY-SA 4.0 ทุก chunk เก็บ URL ต้นทางไว้ใช้เป็นแหล่งอ้างอิง
+- ตารางข้อมูลสายพันธุ์ — [dogapi.dog](https://dogapi.dog), MIT licence

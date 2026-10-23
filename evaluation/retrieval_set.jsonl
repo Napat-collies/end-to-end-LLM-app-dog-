@@ -1,0 +1,32 @@
+{"id": "r01", "lang": "en", "query": "Where does the Shiba Inu originate from?", "relevant": ["Shiba Inu"]}
+{"id": "r02", "lang": "en", "query": "What animal were Dachshunds originally bred to hunt?", "relevant": ["Dachshund"]}
+{"id": "r03", "lang": "en", "query": "Why is the Basenji known as a barkless dog?", "relevant": ["Basenji"]}
+{"id": "r04", "lang": "en", "query": "What work did Siberian Huskies do historically?", "relevant": ["Siberian Husky"]}
+{"id": "r05", "lang": "en", "query": "What heart and brain conditions are common in Cavalier King Charles Spaniels?", "relevant": ["Cavalier King Charles Spaniel"]}
+{"id": "r06", "lang": "en", "query": "Why are Dalmatians associated with firehouses and horse-drawn carriages?", "relevant": ["Dalmatian"]}
+{"id": "r07", "lang": "en", "query": "What is the ridge of hair on the back of the Thai Ridgeback?", "relevant": ["Thai Ridgeback"]}
+{"id": "r08", "lang": "en", "query": "Why is the Saint Bernard famous for mountain rescue in the Alps?", "relevant": ["Saint Bernard"]}
+{"id": "r09", "lang": "en", "query": "What breathing problems do French Bulldogs suffer from?", "relevant": ["French Bulldog"]}
+{"id": "r10", "lang": "en", "query": "How fast can a Greyhound run?", "relevant": ["Greyhound"]}
+{"id": "r11", "lang": "en", "query": "Which breed is famous for herding sheep with an intense stare?", "relevant": ["Border Collie"]}
+{"id": "r12", "lang": "en", "query": "What coat colours does the Labrador Retriever come in?", "relevant": ["Labrador Retriever"]}
+{"id": "r13", "lang": "en", "query": "Why are Poodles traditionally given their distinctive haircut?", "relevant": ["Poodle"]}
+{"id": "r14", "lang": "en", "query": "Which breed has a blue-black tongue?", "relevant": ["Chow Chow"]}
+{"id": "r15", "lang": "en", "query": "Which large breed is known for water rescue and webbed feet?", "relevant": ["Newfoundland"]}
+{"id": "r16", "lang": "en", "query": "Was the Bulldog originally used for bull-baiting?", "relevant": ["Bulldog"]}
+{"id": "r17", "lang": "en", "query": "What was the Rottweiler originally used for in Germany?", "relevant": ["Rottweiler"]}
+{"id": "r18", "lang": "en", "query": "Which Japanese breed is linked to the famous loyal dog Hachiko?", "relevant": ["Akita"]}
+{"id": "r19", "lang": "en", "query": "Despite its name, where was the Australian Shepherd actually developed?", "relevant": ["Australian Shepherd"]}
+{"id": "r20", "lang": "en", "query": "Which large Arctic sled dog was bred by the Inuit people of Alaska?", "relevant": ["Alaskan Malamute"]}
+{"id": "r21", "lang": "en", "query": "Compare the temperament of the Golden Retriever and the Labrador Retriever.", "relevant": ["Golden Retriever", "Labrador Retriever"]}
+{"id": "r22", "lang": "en", "query": "How much grooming does a Shih Tzu's long coat need?", "relevant": ["Shih Tzu"]}
+{"id": "t01", "lang": "th", "query": "ชิวาวามีต้นกำเนิดมาจากประเทศอะไร", "relevant": ["Chihuahua"]}
+{"id": "t02", "lang": "th", "query": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไรของไทย", "relevant": ["Thai Bangkaew"]}
+{"id": "t03", "lang": "th", "query": "บีเกิ้ลถูกเพาะพันธุ์มาเพื่อล่าสัตว์ชนิดใด", "relevant": ["Beagle"]}
+{"id": "t04", "lang": "th", "query": "ปั๊กมีปัญหาสุขภาพเกี่ยวกับการหายใจหรือไม่", "relevant": ["Pug"]}
+{"id": "t05", "lang": "th", "query": "คอร์กี้เป็นสุนัขที่สมเด็จพระราชินีอังกฤษโปรดปรานใช่ไหม", "relevant": ["Pembroke Welsh Corgi"]}
+{"id": "t06", "lang": "th", "query": "เกรทเดนเป็นสุนัขที่ตัวสูงที่สุดในโลกหรือเปล่า", "relevant": ["Great Dane"]}
+{"id": "t07", "lang": "th", "query": "ใครเป็นผู้พัฒนาสายพันธุ์โดเบอร์แมน", "relevant": ["Dobermann"]}
+{"id": "t08", "lang": "th", "query": "ซามอยด์ได้ชื่อมาจากชนเผ่าใด", "relevant": ["Samoyed"]}
+{"id": "t09", "lang": "th", "query": "ยอร์คเชียร์เทอร์เรียเดิมถูกใช้จับหนูในโรงงานใช่ไหม", "relevant": ["Yorkshire Terrier"]}
+{"id": "t10", "lang": "th", "query": "ทำไมเยอรมันเชพเพิร์ดจึงนิยมใช้เป็นสุนัขตำรวจ", "relevant": ["German Shepherd"]}

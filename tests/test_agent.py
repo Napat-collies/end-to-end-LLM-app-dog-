@@ -85,3 +85,12 @@ def test_off_topic_answer_without_tools_is_accepted(ctx, monkeypatch):
     client = FakeClient([message("I only answer dog breed questions.")])
     resp = run_agent("capital of France?", ctx, client=client)
     assert resp.tool_calls == [] and len(client.requests) == 1
+
+
+def test_grouped_citations_are_all_listed(ctx):
+    client = FakeClient([
+        message(tool_calls=[tool_call("c1", "search_breed_docs", '{"query": "dachshund badger hound history"}')]),
+        message("Bred to hunt badgers [1, 2]."),
+    ])
+    resp = run_agent("what did dachshunds hunt?", ctx, client=client)
+    assert [c.n for c in resp.citations] == [1, 2]

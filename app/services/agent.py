@@ -49,7 +49,8 @@ Rules:
 SEARCH_FIRST = ("You answered without calling any tool, but the breed documents may cover this question. "
                 "Call search_breed_docs (or query_breeds for numbers) first, then answer from the results.")
 FORCE_FINAL = "Stop calling tools now. Answer the original question using only the tool results above."
-CITE = re.compile(r"\[(\d+)\]")
+# Matches [3], [1, 2] and [1,2]: the model sometimes groups citations in one bracket.
+CITE = re.compile(r"\[(\d+(?:\s*,\s*\d+)*)\]")
 THAI = re.compile(r"[\u0E00-\u0E7F]")
 
 
@@ -134,7 +135,7 @@ def run_agent(question: str, ctx: ToolContext, client=None, max_steps: int = con
         final = chat(messages + [{"role": "user", "content": FORCE_FINAL}], tools=None, client=client)
         answer = (final.content or "").strip()
 
-    used = {int(n) for n in CITE.findall(answer)}
+    used = {int(n) for group in CITE.findall(answer) for n in group.split(",")}
     citations = [c for c in ctx.citations.items if c.n in used]
     return AskResponse(answer=answer, citations=citations, tool_calls=trace,
                        steps=steps, stop_reason=stop_reason)

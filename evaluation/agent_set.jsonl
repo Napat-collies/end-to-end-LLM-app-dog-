@@ -1,0 +1,22 @@
+{"id": "a01", "lang": "en", "question": "Which 3 dog breeds are the heaviest on average?", "expected_tools": ["query_breeds"], "check": {"type": "top", "gold": {"sort_by": "avg_weight_kg", "descending": true, "limit": 3}}}
+{"id": "a02", "lang": "en", "question": "Which 3 breeds have the longest average life span?", "expected_tools": ["query_breeds"], "check": {"type": "top", "gold": {"sort_by": "avg_life_years", "descending": true, "limit": 3}}}
+{"id": "a03", "lang": "en", "question": "How many breeds are in the Toy Group?", "expected_tools": ["query_breeds"], "check": {"type": "count", "gold": {"group": "Toy Group"}}}
+{"id": "a04", "lang": "en", "question": "What is the lightest dog breed in the database?", "expected_tools": ["query_breeds"], "check": {"type": "top", "gold": {"sort_by": "avg_weight_kg", "descending": false, "limit": 1}}}
+{"id": "a05", "lang": "en", "question": "How many hypoallergenic breeds are there?", "expected_tools": ["query_breeds"], "check": {"type": "count", "gold": {"hypoallergenic": true}}}
+{"id": "a06", "lang": "en", "question": "Which breed in the Herding Group is the heaviest?", "expected_tools": ["query_breeds"], "check": {"type": "top", "gold": {"group": "Herding Group", "sort_by": "avg_weight_kg", "descending": true, "limit": 1}}}
+{"id": "a07", "lang": "en", "question": "How many breeds have an average life span of at least 15 years?", "expected_tools": ["query_breeds"], "check": {"type": "count", "gold": {"min_avg_life_years": 15}}}
+{"id": "a08", "lang": "en", "question": "List the hypoallergenic breeds that weigh at most 4 kg on average.", "expected_tools": ["query_breeds"], "check": {"type": "filter", "gold": {"hypoallergenic": true, "max_avg_weight_kg": 4}}}
+{"id": "a09", "lang": "th", "question": "สุนัขพันธุ์ไหนอายุยืนที่สุด ขอ 3 อันดับ", "expected_tools": ["query_breeds"], "check": {"type": "top", "gold": {"sort_by": "avg_life_years", "descending": true, "limit": 3}}}
+{"id": "a10", "lang": "th", "question": "มีสุนัขกี่สายพันธุ์ที่น้ำหนักเฉลี่ยตั้งแต่ 50 กิโลกรัมขึ้นไป", "expected_tools": ["query_breeds"], "check": {"type": "count", "gold": {"min_avg_weight_kg": 50}}}
+{"id": "a11", "lang": "en", "question": "Where does the Shiba Inu come from?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Japan", "ญี่ปุ่น"]]}}
+{"id": "a12", "lang": "en", "question": "What animal were Dachshunds originally bred to hunt?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["badger"]]}}
+{"id": "a13", "lang": "en", "question": "Which country does the Chihuahua come from?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Mexico", "เม็กซิโก"]]}}
+{"id": "a14", "lang": "en", "question": "What were Siberian Huskies traditionally used for?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["sled", "sledge", "sledding"]]}}
+{"id": "a15", "lang": "en", "question": "Which famous loyal dog from Japan was an Akita?", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Hachik"]]}}
+{"id": "a16", "lang": "th", "question": "สุนัขพันธุ์บางแก้วมาจากจังหวัดอะไร", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["Phitsanulok", "พิษณุโลก"]]}}
+{"id": "a17", "lang": "th", "question": "ไซบีเรียนฮัสกี้เดิมถูกใช้ทำงานอะไร", "expected_tools": ["search_breed_docs"], "check": {"type": "keywords", "any_of": [["sled", "sledge", "เลื่อน"]]}}
+{"id": "a18", "lang": "en", "question": "What is the Beagle's temperament, and how heavy is it on average according to the database?", "expected_tools": ["search_breed_docs", "query_breeds"], "check": {"type": "keywords", "any_of": [["kg", "kilogram"]]}}
+{"id": "a19", "lang": "en", "question": "Why do Pugs have breathing problems, and what is their average life span in the database?", "expected_tools": ["search_breed_docs", "query_breeds"], "check": {"type": "keywords", "any_of": [["year", "yr"]]}}
+{"id": "a20", "lang": "en", "question": "What is the capital of France?", "expected_tools": [], "check": {"type": "offtopic", "forbidden": ["Paris"]}}
+{"id": "a21", "lang": "th", "question": "ช่วยแนะนำสูตรต้มยำกุ้งหน่อย", "expected_tools": [], "check": {"type": "offtopic", "forbidden": ["ตะไคร้", "lemongrass"]}}
+{"id": "a22", "lang": "en", "question": "What is the temperament of the Xoloitzcuintli?", "expected_tools": null, "check": {"type": "abstain"}}

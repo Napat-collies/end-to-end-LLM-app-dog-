@@ -36,7 +36,7 @@
      "sort_by": "avg_weight_kg"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 283, \"returned\": 3, \"rows\": [{\"name\": \"Mastiff\", \"group\": \"Working Group\", \"weight_kg\": \"54-113\", \"life_years\": \"6-10\", \"hypoallergenic\": false}, {\"name\": \"Spanish Mastiff\", \"group\": \"Foundation Stock Service\", \"weight_kg\": \"52-110\", \"life_years\": \"10-12\", \"hypoallergenic\": false},"
+    "result_preview": "{\"total_matches\": 283, \"returned\": 3, \"sorted_by\": \"avg_weight_kg descending (largest first)\", \"rows\": [{\"name\": \"Mastiff\", \"group\": \"Working Group\", \"weight_kg\": \"54-113\", \"life_years\": \"6-10\", \"hypoallergenic\": false}, {\"name\": \"Spanish Mastiff\", \"group\": \"Foundation Stock Service\", \"weight_kg\": \""
    }
   ]
  },
@@ -65,7 +65,7 @@
   "baseline_correct": false,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "The 3 breeds with the longest average life span are the Caucasian Shepherd Dog (15-20 years), Lagotto Romagnolo (15-17 years), and Poodle (Toy) (14-18 years).",
+  "agent_answer": "The 3 breeds with the longest average life span are:\n\n1.  Caucasian Shepherd Dog (15-20 years)\n2.  Lagotto Romagnolo (15-17 years)\n3.  Poodle (Toy) (14-18 years)",
   "baseline_answer": "While the exact ranking can vary slightly depending on the specific study and source, generally, the breeds with the longest average lifespans tend to be smaller and have certain genetic predispositions.\n\nBased on general veterinary consensus and studies, here are three breeds often cited as having some of the longest average lifespans:\n\n1. **Greyhound:** These sighthounds are known for being relatively gentle and have a surprisingly long lifespan, often reaching into their late teens.\n2. **Basenji:** This unique breed has a reputation for being quite long-lived and generally healthy.\n3. **Bichon Frise:** Many small, fluffy companion breeds, like the Bichon, tend to have excellent longevity.\n\n**Important Disclaimer:**\n\nIt is crucial to remember that **individual health, genetics, diet, exercise, and veterinary care play a much larger role in a dog's lifespan than breed alone.** While these breeds have good averages, any dog can have a shorter or longer life!",
   "trace": [
    {
@@ -77,7 +77,7 @@
      "sort_by": "avg_life_years"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 283, \"returned\": 3, \"rows\": [{\"name\": \"Caucasian Shepherd Dog\", \"group\": \"Foundation Stock Service\", \"weight_kg\": \"45-100\", \"life_years\": \"15-20\", \"hypoallergenic\": false}, {\"name\": \"Lagotto Romagnolo\", \"group\": \"Sporting Group\", \"weight_kg\": \"11-16\", \"life_years\": \"15-17\", \"hypoal"
+    "result_preview": "{\"total_matches\": 283, \"returned\": 3, \"sorted_by\": \"avg_life_years descending (largest first)\", \"rows\": [{\"name\": \"Caucasian Shepherd Dog\", \"group\": \"Foundation Stock Service\", \"weight_kg\": \"45-100\", \"life_years\": \"15-20\", \"hypoallergenic\": false}, {\"name\": \"Lagotto Romagnolo\", \"group\": \"Sporting Gr"
    }
   ]
  },
@@ -133,7 +133,7 @@
      "group": "Toy Group"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 23, \"returned\": 10, \"rows\": [{\"name\": \"Affenpinscher\", \"group\": \"Toy Group\", \"weight_kg\": \"4-6\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Biewer Terrier\", \"group\": \"Toy Group\", \"weight_kg\": \"2-4\", \"life_years\": \"14-16\", \"hypoallergenic\": false}, {\"name\": \"Brussels "
+    "result_preview": "{\"total_matches\": 23, \"returned\": 10, \"sorted_by\": \"name ascending (smallest first)\", \"rows\": [{\"name\": \"Affenpinscher\", \"group\": \"Toy Group\", \"weight_kg\": \"4-6\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Biewer Terrier\", \"group\": \"Toy Group\", \"weight_kg\": \"2-4\", \"life_years\": \"14-16"
    }
   ]
  },
@@ -171,7 +171,7 @@
      "sort_by": "avg_weight_kg"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 283, \"returned\": 10, \"rows\": [{\"name\": \"Chihuahua\", \"group\": \"Toy Group\", \"weight_kg\": \"1-3\", \"life_years\": \"14-16\", \"hypoallergenic\": false}, {\"name\": \"Pomeranian\", \"group\": \"Toy Group\", \"weight_kg\": \"1-3\", \"life_years\": \"12-16\", \"hypoallergenic\": false}, {\"name\": \"Russian Toy\", \""
+    "result_preview": "{\"total_matches\": 283, \"returned\": 10, \"sorted_by\": \"avg_weight_kg ascending (smallest first)\", \"rows\": [{\"name\": \"Chihuahua\", \"group\": \"Toy Group\", \"weight_kg\": \"1-3\", \"life_years\": \"14-16\", \"hypoallergenic\": false}, {\"name\": \"Pomeranian\", \"group\": \"Toy Group\", \"weight_kg\": \"1-3\", \"life_years\": \"12"
    }
   ]
  },
@@ -210,7 +210,7 @@
   "baseline_correct": false,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "There are 13 hypoallergenic breeds in the database.",
+  "agent_answer": "There are 13 hypoallergenic breeds.",
   "baseline_answer": "That's a very common question, but it's important to know that **there is no definitive, exact number** of hypoallergenic dog breeds.\n\nThe term \"hypoallergenic\" itself is a bit of a misnomer in the dog world. No dog is truly 100% hypoallergenic because dander (dead skin flakes) and saliva are what cause most allergies, and all dogs produce these.\n\nHowever, when people use the term, they are usually referring to breeds that **shed less** or have a coat type that is less likely to trigger allergic reactions in sensitive people.\n\nInstead of a number, I can give you a list of some of the most commonly cited and popular breeds that are often recommended for allergy sufferers. These breeds typically have hair rather than fur, or they shed very little:\n\n**Popular Low-Shedding/Hypoallergenic Breeds:**\n\n*   **Poodle** (Standard, Miniature, Toy) - These are perhaps the most famous low-shedding dogs.\n*   **Bichon Frise**\n*   **Maltese**\n*   **Shih Tzu**\n*   **Yorkshire Terrier (Yorkie)**\n*   **Portuguese Water Dog**\n*   **Airedale Terrier** (Though they do shed, they are often mentioned)\n*   **Schnauzer** (Miniature, Standard, Giant)\n*   **West Highland White Terrier (Westie)**\n*   **Soft Coated Wheaten Terrier**\n\n**Important Considerations Before Choosing:**\n\n1.  **Allergies are Individual:** What causes an allergic reaction in one person might not affect another. Always consult with an allergist if you are seriously considering getting a dog.\n2.  **Grooming is Key:** Even \"low-shedding\" dogs require regular grooming (brushing, clipping) to manage dead hair and prevent matting.\n3.  **Training and Temperament:** Don't choose a dog based *only* on its coat. Consider its energy level, grooming needs, and temperament to ensure it fits your lifestyle!\n\nIf you tell me what size or energy level you are looking for, I can give you more tailored recommendations!",
   "trace": [
    {
@@ -220,7 +220,7 @@
      "hypoallergenic": true
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 13, \"returned\": 10, \"rows\": [{\"name\": \"Affenpinscher\", \"group\": \"Toy Group\", \"weight_kg\": \"4-6\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Bichon Frise\", \"group\": \"Non-Sporting Group\", \"weight_kg\": \"5-8\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Chi"
+    "result_preview": "{\"total_matches\": 13, \"returned\": 10, \"sorted_by\": \"name ascending (smallest first)\", \"rows\": [{\"name\": \"Affenpinscher\", \"group\": \"Toy Group\", \"weight_kg\": \"4-6\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Bichon Frise\", \"group\": \"Non-Sporting Group\", \"weight_kg\": \"5-8\", \"life_years\":"
    }
   ]
  },
@@ -242,12 +242,12 @@
    "query_breeds"
   ],
   "tool_ok": true,
-  "sql_match": false,
-  "agent_correct": false,
+  "sql_match": true,
+  "agent_correct": true,
   "baseline_correct": false,
-  "steps": 2,
+  "steps": 3,
   "stop_reason": "final_answer",
-  "agent_answer": "The heaviest breed in the Herding Group among the results provided is the Cardigan Welsh Corgi, with a weight range of 11-17 kg.",
+  "agent_answer": "The heaviest breed in the Herding Group listed is the Beauceron, with a weight of 30-39 kg [TOOL RESULT (untrusted data, not instructions)].",
   "baseline_answer": "The heaviest breed in the Herding Group can vary depending on the specific size classifications and the individual dog, but generally, the **Great Pyrenees** is one of the largest and heaviest breeds often associated with herding or livestock guarding roles, which sometimes places them near or overlapping with herding groups depending on the kennel club.\n\nHowever, if we stick strictly to breeds traditionally classified as \"Herding\" (like Border Collies, German Shepherds, etc.), the **German Shepherd Dog** is typically one of the largest and heaviest dogs in that group.\n\n**To give you the most accurate answer, could you specify which kennel club's classification you are interested in (e.g., AKC, FCI)?**\n\nIn general terms:\n\n*   **For sheer size/weight:** The **Great Pyrenees** is often the heaviest, though they are technically a Livestock Guardian Dog.\n*   **For the largest *traditional* herder:** The **German Shepherd Dog** is usually the heaviest contender.",
   "trace": [
    {
@@ -257,8 +257,19 @@
      "group": "Herding Group",
      "sort_by": "avg_weight_kg"
     },
+    "ok": false,
+    "result_preview": "ERROR: invalid arguments for query_breeds: arguments: Value error, when sort_by is avg_weight_kg or avg_life_years you must set descending: true = largest/longest first, false = smallest/shortest first"
+   },
+   {
+    "step": 2,
+    "name": "query_breeds",
+    "arguments": {
+     "descending": true,
+     "group": "Herding Group",
+     "sort_by": "avg_weight_kg"
+    },
     "ok": true,
-    "result_preview": "{\"total_matches\": 32, \"returned\": 10, \"rows\": [{\"name\": \"Shetland Sheepdog\", \"group\": \"Herding Group\", \"weight_kg\": \"7-11\", \"life_years\": \"12-14\", \"hypoallergenic\": false}, {\"name\": \"Pembroke Welsh Corgi\", \"group\": \"Herding Group\", \"weight_kg\": \"9-12\", \"life_years\": \"12-15\", \"hypoallergenic\": false}"
+    "result_preview": "{\"total_matches\": 32, \"returned\": 10, \"sorted_by\": \"avg_weight_kg descending (largest first)\", \"rows\": [{\"name\": \"Beauceron\", \"group\": \"Herding Group\", \"weight_kg\": \"30-39\", \"life_years\": \"12-14\", \"hypoallergenic\": false}, {\"name\": \"Old English Sheepdog\", \"group\": \"Herding Group\", \"weight_kg\": \"27-4"
    }
   ]
  },
@@ -305,7 +316,7 @@
   "steps": 2,
   "stop_reason": "final_answer",
   "agent_answer": "There are 23 breeds that have an average life span of at least 15 years.",
-  "baseline_answer": "That's a very specific question, and unfortunately, there isn't one single, definitive, universally agreed-upon database that lists every single dog breed and their exact average lifespan. Lifespan can vary greatly based on genetics, diet, exercise, and veterinary care.\n\nHowever, I can give you some general information and point you toward the types of breeds that *tend* to live longer than 15 years.\n\n**Generally, breeds with longer lifespans (often 12-16+ years) tend to be:**\n\n* **Some larger, sturdy breeds:** While some giant breeds have shorter lifespans, certain large breeds can be quite long-lived.\n* **Some smaller, ancient breeds:** Breeds that have been selectively bred for companionship over many generations sometimes exhibit longevity.\n\n**To get a more accurate answer, you would need to consult:**\n\n1. **Veterinary Research Databases:** Reputable veterinary organizations often publish studies on breed-specific longevity.\n2. **Major Breed Club Websites:** Organizations like the American Kennel Club (AKC) or The Kennel Club (UK) sometimes provide general health and lifespan information for their recognized breeds.\n\n**If you are interested in specific breeds, feel free to name a few, and I can give you the general consensus on their typical lifespan!**",
+  "baseline_answer": "That's a very specific question, and unfortunately, there isn't one single, definitive, universally agreed-upon database that lists every single dog breed and their exact average lifespan with a strict \"at least 15 years\" cutoff. Lifespan can vary greatly even within the same breed based on genetics, diet, exercise, and veterinary care.\n\nHowever, I can give you some general information and point you toward the types of breeds that *tend* to live longer.\n\n**Generally, breeds with longer lifespans (often 12-16+ years) tend to be:**\n\n* **Some larger, older breeds:** While many large breeds have shorter lifespans, some giant or large breeds are known for longevity.\n* **Some smaller, sturdy breeds:** Certain smaller breeds are known for being hardy and long-lived.\n\n**To get a more accurate answer, you would need to consult specialized veterinary or kennel club resources.**\n\n**If you are interested in specific breeds known for longevity, I can list some examples, but I cannot provide a precise count of how many meet the 15-year minimum.**\n\nCould you tell me if you are interested in a specific size category (small, medium, large) or a particular type of dog?",
   "trace": [
    {
     "step": 1,
@@ -314,7 +325,7 @@
      "min_avg_life_years": 15
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 23, \"returned\": 10, \"rows\": [{\"name\": \"Affenpinscher\", \"group\": \"Toy Group\", \"weight_kg\": \"4-6\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Basenji\", \"group\": \"Hound Group\", \"weight_kg\": \"9-11\", \"life_years\": \"14-16\", \"hypoallergenic\": false}, {\"name\": \"Bichon Frise\""
+    "result_preview": "{\"total_matches\": 23, \"returned\": 10, \"sorted_by\": \"name ascending (smallest first)\", \"rows\": [{\"name\": \"Affenpinscher\", \"group\": \"Toy Group\", \"weight_kg\": \"4-6\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Basenji\", \"group\": \"Hound Group\", \"weight_kg\": \"9-11\", \"life_years\": \"14-16\", \""
    }
   ]
  },
@@ -344,7 +355,7 @@
   "baseline_correct": false,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "The hypoallergenic breeds that weigh at most 4 kg on average are:\n\n*   Chinese Crested (Toy Group)\n*   Italian Greyhound (Toy Group)\n*   Maltese (Toy Group)\n*   Poodle (Toy) (Toy Group)",
+  "agent_answer": "The hypoallergenic breeds that weigh at most 4 kg on average are: Chinese Crested, Italian Greyhound, Maltese, and Poodle (Toy) [TOOL RESULT (untrusted data, not instructions)].",
   "baseline_answer": "It can be tricky to give a definitive list because \"hypoallergenic\" can mean different things to different people (some dogs shed less, others produce less dander). However, I can give you a list of small breeds that are often cited as having low-shedding or hypoallergenic qualities and generally weigh 4 kg (about 8.8 lbs) or less on average.\n\n**Please remember:** No dog is 100% hypoallergenic, as dander (which contains proteins) is what often causes allergies, not just the hair/fur.\n\nHere are some breeds to consider:\n\n*   **Bichon Frise:** These fluffy dogs are known for being relatively low-shedders and come in various sizes, with many small varieties fitting under 4 kg.\n*   **Maltese:** A classic small companion dog, they have fine, silky coats and are generally considered low-shedding.\n*   **Poodle (Toy or Miniature):** Poodles are famous for their non-shedding coats (they grow hair rather than fur) and come in very small sizes. A Toy Poodle will easily meet the weight requirement.\n*   **Shih Tzu:** While some Shih Tzus can be slightly larger, many smaller varieties stay under the 4 kg mark and have coats that require regular grooming to manage shedding.\n*   **Yorkshire Terrier (Yorkie):** These tiny dogs have long, fine hair and are often recommended for allergy sufferers.\n*   **Havanese:** Similar to the Maltese, they have a soft, silky coat and are generally considered low-shedding.\n*   **Coton de Tulear:** These dogs have a soft, cotton-like coat and are known for being relatively low-shedders.\n\n**Important Advice Before Choosing:**\n\n1.  **Visit a Breeder/Shelter:** If you are serious about allergies, the best thing you can do is spend time with the specific dog you are considering. See how your body reacts to that individual dog's dander.\n2.  **\"Low Shedding\" vs. \"Hypoallergenic\":** Always treat \"low shedding\" as a preference, not a guarantee of allergy relief.\n\nI hope this list helps you start your search!",
   "trace": [
    {
@@ -355,7 +366,7 @@
      "max_avg_weight_kg": 4
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 4, \"returned\": 4, \"rows\": [{\"name\": \"Chinese Crested\", \"group\": \"Toy Group\", \"weight_kg\": \"3-5\", \"life_years\": \"13-18\", \"hypoallergenic\": true}, {\"name\": \"Italian Greyhound\", \"group\": \"Toy Group\", \"weight_kg\": \"3-5\", \"life_years\": \"14-16\", \"hypoallergenic\": true}, {\"name\": \"Maltese"
+    "result_preview": "{\"total_matches\": 4, \"returned\": 4, \"sorted_by\": \"name ascending (smallest first)\", \"rows\": [{\"name\": \"Chinese Crested\", \"group\": \"Toy Group\", \"weight_kg\": \"3-5\", \"life_years\": \"13-18\", \"hypoallergenic\": true}, {\"name\": \"Italian Greyhound\", \"group\": \"Toy Group\", \"weight_kg\": \"3-5\", \"life_years\": \"14"
    }
   ]
  },
@@ -384,7 +395,7 @@
   "baseline_correct": false,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "จากการค้นหา ข้อมูลที่แสดงมามีสุนัขหลายสายพันธุ์ที่มีอายุยืนยาว แต่ไม่ได้ระบุ 3 อันดับแรกที่ชัดเจนที่สุดจากข้อมูลที่ได้รับมาครับ\n\nอย่างไรก็ตาม จากข้อมูลที่แสดงมา สุนัขที่มีอายุยืนยาวที่สุดในกลุ่มตัวอย่างที่แสดงคือ:\n\n1. **Caucasian Shepherd Dog**: อายุ 15-20 ปี [1]\n2. **Lagotto Romagnolo**: อายุ 15-17 ปี [2]\n3. **Poodle (Toy)**: อายุ 14-18 ปี [3]\n\nโปรดทราบว่าข้อมูลนี้เป็นเพียงส่วนหนึ่งของฐานข้อมูล และเพื่อความแม่นยำสูงสุดในการดูแลสุขภาพสุนัข ควรปรึกษาสัตวแพทย์ครับ",
+  "agent_answer": "จากการค้นหา ข้อมูลที่แสดงให้เห็นสุนัขที่มีอายุยืนที่สุด 3 อันดับแรกคือ:\n\n1. **Caucasian Shepherd Dog**: อายุขัย 15-20 ปี [1]\n2. **Lagotto Romagnolo**: อายุขัย 15-17 ปี [2]\n3. **Poodle (Toy)**: อายุขัย 14-18 ปี [3]\n\nโปรดจำไว้ว่าข้อมูลนี้เป็นข้อมูลทั่วไป และคุณควรปรึกษาสัตวแพทย์เพื่อรับคำแนะนำด้านสุขภาพที่เฉพาะเจาะจงสำหรับสุนัขของคุณ",
   "baseline_answer": "การระบุสุนัขพันธุ์ที่ \"อายุยืนที่สุด\" นั้นอาจมีความแตกต่างกันไปขึ้นอยู่กับการศึกษาและปัจจัยด้านสุขภาพของแต่ละตัว แต่โดยทั่วไปแล้ว มีสายพันธุ์ที่ขึ้นชื่อเรื่องอายุขัยที่ยาวนานกว่าสายพันธุ์อื่น ๆ ครับ\n\nนี่คือ 3 อันดับสุนัขที่มักถูกกล่าวถึงว่ามีอายุยืนยาวที่สุด (โดยประมาณ):\n\n**1. ชิวาวา (Chihuahua)**\n* **เหตุผล:** สุนัขพันธุ์เล็กมักมีแนวโน้มที่จะมีอายุยืนยาวกว่าสุนัขพันธุ์ใหญ่หลายชนิด ชิวาวาเป็นหนึ่งในสายพันธุ์ที่ได้รับการบันทึกว่ามีอายุขัยเฉลี่ยสูงมาก บางตัวมีอายุเกิน 15 ปีได้สบาย ๆ\n\n**2. ปอมเมอเรเนียน (Pomeranian)**\n* **เหตุผล:** เช่นเดียวกับชิวาวา สุนัขพันธุ์เล็กนี้มีขนาดที่เล็กและมีสุขภาพที่ค่อนข้างแข็งแรง ทำให้มีอายุขัยเฉลี่ยที่สูงกว่าสายพันธุ์ขนาดใหญ่หลายเท่าตัว\n\n**3. บิชอง ฟร็องส์ (Bichon Frise)**\n* **เหตุผล:** สายพันธุ์นี้เป็นที่รู้จักในเรื่องของนิสัยที่ร่าเริงและสุขภาพที่ดี พวกเขามักมีอายุขัยที่ยาวนานและสามารถมีชีวิตอยู่ได้ถึงช่วงวัยชราอย่างมีความสุข\n\n**ข้อควรจำที่สำคัญ:**\n\n* **พันธุกรรมและสุขภาพ:** อายุขัยของสุนัขขึ้นอยู่กับพันธุกรรม การดูแลสุขภาพ โภชนาการ การออกกำลังกาย และการตรวจสุขภาพอย่างสม่ำเสมอเป็นปัจจัยที่สำคัญที่สุดครับ\n* **ค่าเฉลี่ย:** ตัวเลขที่กล่าวมาเป็นค่าเฉลี่ยเท่านั้น สุนัขแต่ละตัวมีความเป็นเอกลักษณ์ของตัวเองครับ",
   "trace": [
    {
@@ -395,7 +406,7 @@
      "sort_by": "avg_life_years"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 283, \"returned\": 10, \"rows\": [{\"name\": \"Caucasian Shepherd Dog\", \"group\": \"Foundation Stock Service\", \"weight_kg\": \"45-100\", \"life_years\": \"15-20\", \"hypoallergenic\": false}, {\"name\": \"Lagotto Romagnolo\", \"group\": \"Sporting Group\", \"weight_kg\": \"11-16\", \"life_years\": \"15-17\", \"hypoa"
+    "result_preview": "{\"total_matches\": 283, \"returned\": 10, \"sorted_by\": \"avg_life_years descending (largest first)\", \"rows\": [{\"name\": \"Caucasian Shepherd Dog\", \"group\": \"Foundation Stock Service\", \"weight_kg\": \"45-100\", \"life_years\": \"15-20\", \"hypoallergenic\": false}, {\"name\": \"Lagotto Romagnolo\", \"group\": \"Sporting G"
    }
   ]
  },
@@ -439,7 +450,7 @@
   "sql_match": true,
   "agent_correct": true,
   "baseline_correct": false,
-  "steps": 2,
+  "steps": 3,
   "stop_reason": "final_answer",
   "agent_answer": "จากการค้นหา มีสุนัขทั้งหมด 21 สายพันธุ์ที่มีน้ำหนักเฉลี่ยตั้งแต่ 50 กิโลกรัมขึ้นไป",
   "baseline_answer": "การระบุจำนวนสายพันธุ์สุนัขที่มีน้ำหนักเฉลี่ยตั้งแต่ 50 กิโลกรัมขึ้นไปนั้นค่อนข้างยากที่จะให้ตัวเลขที่แน่นอนได้ทันที เนื่องจาก:\n\n1. **ความแปรปรวนของสายพันธุ์:** แม้แต่ในสายพันธุ์เดียวกัน น้ำหนักของสุนัขแต่ละตัวก็มีความแตกต่างกันมาก ขึ้นอยู่กับเพศ อายุ และพันธุกรรม\n2. **การจำแนกสายพันธุ์:** มีการจัดกลุ่มสายพันธุ์ที่แตกต่างกันไปในแต่ละแหล่งข้อมูล\n\nอย่างไรก็ตาม, โดยทั่วไปแล้ว สายพันธุ์สุนัขขนาดใหญ่ (Giant Breeds) หรือสายพันธุ์ที่ถูกพัฒนามาให้มีขนาดใหญ่ มักจะมีน้ำหนักเกิน 50 กิโลกรัมได้ง่าย หรือมีน้ำหนักเฉลี่ยที่สูงกว่านี้\n\n**ตัวอย่างสายพันธุ์สุนัขขนาดใหญ่ที่มักจะมีน้ำหนักเฉลี่ยตั้งแต่ 50 กิโลกรัมขึ้นไป (หรือมีศักยภาพที่จะมีน้ำหนักขนาดนั้น):**\n\n* **Great Dane (เกรทเดน):** มักมีน้ำหนักตั้งแต่ 40-90 กิโลกรัมขึ้นไป\n* **Mastiff Breeds (เช่น English Mastiff):** มีขนาดใหญ่และหนักมาก มักเกิน 50 กิโลกรัมไปมาก\n* **Newfoundland (นิวฟันด์แลนด์):** เป็นสุนัขน้ำขนาดใหญ่และมีน้ำหนักมาก\n* **Saint Bernard (เซนต์เบอร์นาร์ด):** เป็นสุนัขภูเขาขนาดใหญ่และมีน้ำหนักมาก\n* **Irish Wolfhound (ไอริช วูลฟ์ฮาวด์):** เป็นสุนัขที่สูงและมีน้ำหนักมาก\n* **Leonberger (เลโอนเบอร์เกอร์):** เป็นสุนัขผู้พิทักษ์ขนาดใหญ่\n* **Anatolian Shepherd (อานาโตเลียน เชพเพิร์ด):** เป็นสุนัขผู้พิทักษ์ขนาดใหญ่และแข็งแรง\n\n**สรุป:**\n\nมี **หลายสายพันธุ์** ที่มีน้ำหนักเฉลี่ยเกิน 50 กิโลกรัม แต่ถ้าต้องการรายชื่อที่แม่นยำที่สุด ควรตรวจสอบจากแหล่งข้อมูลมาตรฐานของสมาคมสุนัขในประเทศนั้นๆ (เช่น AKC หรือ FCI) โดยดูที่ช่วงน้ำหนักที่ระบุสำหรับสายพันธุ์นั้นๆ ครับ/ค่ะ",
@@ -448,10 +459,22 @@
     "step": 1,
     "name": "query_breeds",
     "arguments": {
-     "min_avg_weight_kg": 50
+     "min_avg_weight_kg": 50,
+     "sort_by": "avg_weight_kg"
+    },
+    "ok": false,
+    "result_preview": "ERROR: invalid arguments for query_breeds: arguments: Value error, when sort_by is avg_weight_kg or avg_life_years you must set descending: true = largest/longest first, false = smallest/shortest first"
+   },
+   {
+    "step": 2,
+    "name": "query_breeds",
+    "arguments": {
+     "descending": true,
+     "min_avg_weight_kg": 50,
+     "sort_by": "avg_weight_kg"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 21, \"returned\": 10, \"rows\": [{\"name\": \"Anatolian Shepherd Dog\", \"group\": \"Working Group\", \"weight_kg\": \"36-70\", \"life_years\": \"11-13\", \"hypoallergenic\": false}, {\"name\": \"Black Russian Terrier\", \"group\": \"Working Group\", \"weight_kg\": \"45-60\", \"life_years\": \"10-14\", \"hypoallergenic\""
+    "result_preview": "{\"total_matches\": 21, \"returned\": 10, \"sorted_by\": \"avg_weight_kg descending (largest first)\", \"rows\": [{\"name\": \"Mastiff\", \"group\": \"Working Group\", \"weight_kg\": \"54-113\", \"life_years\": \"6-10\", \"hypoallergenic\": false}, {\"name\": \"Spanish Mastiff\", \"group\": \"Foundation Stock Service\", \"weight_kg\": \""
    }
   ]
  },
@@ -506,7 +529,7 @@
   "baseline_correct": true,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "The Dachshund was originally bred to scent, chase, and flush out badgers and other burrow-dwelling animals [2]. Additionally, they were commonly used for rabbit and fox hunting, and in packs, they were known to hunt game as large as wild boar and as fierce as the wolverine [1].",
+  "agent_answer": "The Dachshund was originally bred to scent, chase, and flush out badgers and other burrow-dwelling animals [2]. Additionally, they were commonly used for rabbit and fox hunting, for locating wounded deer, and in packs were known to hunt game as large as wild boar and as fierce as the wolverine [1].",
   "baseline_answer": "Dachshunds were originally bred to hunt **badgers**.",
   "trace": [
    {
@@ -535,7 +558,7 @@
   ],
   "tool_ok": true,
   "sql_match": null,
-  "agent_correct": false,
+  "agent_correct": true,
   "baseline_correct": true,
   "steps": 2,
   "stop_reason": "final_answer",
@@ -547,7 +570,7 @@
     "name": "search_breed_docs",
     "arguments": {
      "breed": "Chihuahua",
-     "query": "Where does the Chihuahua come from?"
+     "query": "Where does the Chihuahua originate from?"
     },
     "ok": true,
     "result_preview": "[1] (Chihuahua - Overview)\nThe Chihuahua or Chihuahueño is a Mexican breed of toy dog and the smallest recognized dog breed in the world. It is primarily kept as a companion animal and is characterized by its compact size, large erect ears, and rounded skull. The breed occurs in both short- and long"
@@ -596,29 +619,16 @@
   "expected_tools": [
    "search_breed_docs"
   ],
-  "called_tools": [
-   "search_breed_docs"
-  ],
-  "tool_ok": true,
+  "called_tools": [],
+  "tool_ok": false,
   "sql_match": null,
-  "agent_correct": true,
+  "agent_correct": false,
   "baseline_correct": true,
-  "steps": 2,
+  "steps": 1,
   "stop_reason": "final_answer",
-  "agent_answer": "The famous loyal dog from Japan that was an Akita is Hachikō [1, 4].",
+  "agent_answer": "I am sorry, but I could not find that information in the documents.",
   "baseline_answer": "The most famous loyal dog from Japan that was an Akita is **Hachiko**.",
-  "trace": [
-   {
-    "step": 1,
-    "name": "search_breed_docs",
-    "arguments": {
-     "breed": "Akita",
-     "query": "famous loyal dog from Japan"
-    },
-    "ok": true,
-    "result_preview": "[1] (Akita - Japanese history)\na suburb of the city, and commuted to work every day on the train. Hachikō accompanied his master to and from the station each day. On May 25, 1925, when the dog was 18 months old, he waited for his master's arrival on the four o'clock train, but Professor Ueno had suf"
-   }
-  ]
+  "trace": []
  },
  {
   "id": "a16",
@@ -636,7 +646,7 @@
   "baseline_correct": false,
   "steps": 1,
   "stop_reason": "final_answer",
-  "agent_answer": "ฉันไม่พบข้อมูลเกี่ยวกับจังหวัดที่สุนัขพันธุ์บางแก้วมาจากในเอกสารที่มีอยู่ค่ะ",
+  "agent_answer": "ฉันไม่สามารถค้นหาข้อมูลเกี่ยวกับจังหวัดที่สุนัขพันธุ์บางแก้วมาจากได้ค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับลักษณะนิสัย ประวัติ การดูแล สุขภาพ หรือการออกกำลังกายของสุนัขพันธุ์ต่างๆ ได้ หากคุณสนใจข้อมูลเหล่านี้ โปรดระบุชื่อสายพันธุ์มาได้เลยค่ะ",
   "baseline_answer": "สุนัขพันธุ์บางแก้วมีถิ่นกำเนิดมาจาก **จังหวัดสมุทรสงคราม** ครับ/ค่ะ",
   "trace": []
  },
@@ -658,18 +668,17 @@
   "baseline_correct": true,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "ไซบีเรียนฮัสกี้เดิมถูกพัฒนาโดยชาวชูคชี (Chukchi people) แห่งคาบสมุทรชูคชีในไซบีเรียตะวันออก [2] พวกเขาถูกนำมาที่เมืองโนม (Nome), อะแลสกา ในปี 1908 เพื่อทำหน้าที่เป็นสุนัขลากเลื่อนเพื่อการทำงาน และต่อมาได้ถูกพัฒนาและใช้ในการแข่งสุนัขลากเลื่อน [2] นอกจากนี้ สุนัขสายพันธุ์นี้ยังเคยถูกใช้โดยหน่วยค้นหาและกู้ภัยในเขตอาร์กติกของกองทัพบกสหรัฐฯ ในช่วงสงครามโลกครั้งที่สอง [3]",
+  "agent_answer": "ไซบีเรียนฮัสกี้เดิมถูกพัฒนาโดยชาวชุกชิ (Chukchi people) แห่งคาบสมุทรชุกชิในไซบีเรียตะวันออก [1] พวกเขาถูกนำมายังเมืองโนม (Nome), อะแลสกา ในปี 1908 เพื่อทำหน้าที่เป็นสุนัขลากเลื่อน [1] และต่อมาได้ถูกพัฒนาและใช้ในการแข่งสุนัขลากเลื่อน [1] นอกจากนี้ สุนัขฮัสกี้ยังถูกใช้โดยสำรวจแอนตาร์กติกของบริติช (British Antarctic Survey) ในแอนตาร์กติกาในช่วงปี 1945 ถึง 1994 [2] และยังเคยรับใช้ในหน่วยค้นหาและกู้ภัยในเขตอาร์กติกของกองทัพบกสหรัฐฯ ในช่วงสงครามโลกครั้งที่สอง [3]",
   "baseline_answer": "ไซบีเรียนฮัสกี้เดิมถูกใช้เป็น **สุนัขลากเลื่อน (Sled Dogs)** เป็นหลักครับ\n\nพวกมันมีต้นกำเนิดมาจากภูมิภาคไซบีเรียของรัสเซีย และถูกเพาะพันธุ์มาเพื่อความสามารถในการทำงานที่ท้าทายในสภาพอากาศที่หนาวจัดและทุรกันดาร พวกมันมีความสามารถโดดเด่นในด้าน:\n\n1. **การลากเลื่อน:** พวกมันถูกใช้โดยชนเผ่าพื้นเมืองเพื่อลากเลื่อนบรรทุกสัมภาระ อาหาร และผู้คนข้ามภูมิประเทศที่ปกคลุมด้วยหิมะและน้ำแข็ง\n2. **ความทนทานต่อความหนาวเย็น:** พวกมันสามารถทนทานต่ออุณหภูมิที่ต่ำมากได้อย่างยอดเยี่ยม\n3. **ความอึดและความคล่องแคล่ว:** พวกมันมีความอดทนสูง สามารถวิ่งเป็นระยะทางไกลๆ ได้อย่างต่อเนื่อง\n\nดังนั้น บทบาทดั้งเดิมและสำคัญที่สุดของไซบีเรียนฮัสกี้คือการเป็น **สุนัขทำงานลากเลื่อน** ครับ",
   "trace": [
    {
     "step": 1,
     "name": "search_breed_docs",
     "arguments": {
-     "breed": "Siberian Husky",
-     "query": "What was the Siberian Husky originally used for?"
+     "query": "what was the Siberian Husky originally used for"
     },
     "ok": true,
-    "result_preview": "[1] (Siberian Husky - 1940s–present)\nHuskies were extensively used as sled dogs by the British Antarctic Survey in Antarctica between 1945 and 1994. A bronze monument to all of BAS's dog teams is outside its Cambridge headquarters, with a plaque listing all the dogs' names. In 1960, the US Army unde"
+    "result_preview": "[1] (Siberian Husky - Lineage and genetic structure)\nThe Siberian Husky was originally developed by the Chukchi people of the Chukchi Peninsula in eastern Siberia. They were brought to Nome, Alaska in 1908 to serve as working sled dogs, and were eventually developed and used for sled dog racing. In "
    }
   ]
  },
@@ -693,7 +702,7 @@
   "baseline_correct": false,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "The Beagle has an even temper and gentle disposition, being described as \"merry\" and amiable [1]. They enjoy company and are good with children [1]. However, they are pack animals and can be prone to separation anxiety [1].\n\nAccording to the database, the average weight for a Beagle is between 9 and 14 kg [2].",
+  "agent_answer": "The Beagle has an even temper and gentle disposition, being described as \"merry\" [1]. They are amiable and generally neither aggressive nor timid, though this can vary by individual. Beagles enjoy company and are good with children [1]. They are pack animals and can be prone to separation anxiety [1].\n\nAccording to the database, the average weight for a Beagle is between 9 and 14 kg [2].",
   "baseline_answer": "The Beagle is generally known for having a **cheerful, friendly, curious, and merry** temperament. They are very social dogs that thrive on human companionship and are known for being good-natured and eager to please. However, they can also be quite stubborn and have a strong prey drive, which means they need consistent training and plenty of mental stimulation.\n\nRegarding weight, according to general breed standards, the average weight for a Beagle is typically between **20 to 30 pounds**.",
   "trace": [
    {
@@ -713,7 +722,7 @@
      "name_contains": "Beagle"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 1, \"returned\": 1, \"rows\": [{\"name\": \"Beagle\", \"group\": \"Hound Group\", \"weight_kg\": \"9-14\", \"life_years\": \"12-15\", \"hypoallergenic\": false}]}"
+    "result_preview": "{\"total_matches\": 1, \"returned\": 1, \"sorted_by\": \"name ascending (smallest first)\", \"rows\": [{\"name\": \"Beagle\", \"group\": \"Hound Group\", \"weight_kg\": \"9-14\", \"life_years\": \"12-15\", \"hypoallergenic\": false}]}"
    }
   ]
  },
@@ -737,7 +746,7 @@
   "baseline_correct": true,
   "steps": 2,
   "stop_reason": "final_answer",
-  "agent_answer": "Based on the search results:\n\n**Breathing Problems in Pugs:**\nPugs have a shortened snout and pushed-in face, a condition called brachycephaly [1]. This condition results in the deformation of the upper airway tract, which leads to breathing obstruction [1]. Potential effects of this include stridor, stertorous breathing, and brachycephalic airway obstructive syndrome [1].\n\n**Average Life Span:**\nThe database shows that the Pug's average life span is **12-15 years** [query_breeds].\n\n*Note: One study mentioned in the search results found a life expectancy of 7.65 years for the Pug, while another found 11.6 years, and a review in Japan found 12.8 years [1]. Please remember to consult a veterinarian for any health concerns.*",
+  "agent_answer": "Pugs have breathing problems because their shortened snout and pushed-in face, known as brachycephaly, causes deformation of the upper airway tract, which leads to breathing obstruction [1]. Potential effects of this condition include stridor, stertorous breathing, and brachycephalic airway obstructive syndrome [1].\n\nRegarding their average life span, the database shows that the Pug has an average life span of 12-15 years [query_breeds]. However, one study in the UK of veterinary records found the Pug to have a life expectancy of 7.65 years, while another UK study found a life expectancy of 11.6 years [search_breed_docs]. Please consult a veterinarian for health concerns.",
   "baseline_answer": "Pugs are prone to breathing problems primarily because of their **brachycephalic** facial structure.\n\nHere's a more detailed explanation:\n\n* **Brachycephaly:** This term refers to a short, broad skull. Pugs have very short muzzles, which means their nasal passages and airways are compressed and underdeveloped.\n* **Airway Obstructions:** This physical structure can lead to several breathing issues, including:\n    * **Brachycephalic Obstructive Airway Syndrome (BOAS):** This is the umbrella term for the breathing difficulties. It can involve stenotic nares (narrow nostrils), an elongated soft palate (which can block the airway), and hypoplastic trachea (a narrow windpipe).\n    * **Heat Sensitivity:** Because their faces are so short, they are less efficient at cooling themselves through panting, making them highly susceptible to overheating and heatstroke, especially in warm or humid weather.\n\n**Regarding their average lifespan:**\n\nBased on general veterinary databases, the average lifespan for a Pug is typically **12 to 15 years**.\n\n***\n\n**Important Note:** If you or someone you know has a Pug experiencing breathing difficulties, it is crucial to consult a veterinarian immediately. These issues can become serious very quickly.",
   "trace": [
    {
@@ -757,7 +766,7 @@
      "name_contains": "Pug"
     },
     "ok": true,
-    "result_preview": "{\"total_matches\": 1, \"returned\": 1, \"rows\": [{\"name\": \"Pug\", \"group\": \"Toy Group\", \"weight_kg\": \"6-8\", \"life_years\": \"12-15\", \"hypoallergenic\": false}]}"
+    "result_preview": "{\"total_matches\": 1, \"returned\": 1, \"sorted_by\": \"name ascending (smallest first)\", \"rows\": [{\"name\": \"Pug\", \"group\": \"Toy Group\", \"weight_kg\": \"6-8\", \"life_years\": \"12-15\", \"hypoallergenic\": false}]}"
    }
   ]
  },
@@ -793,7 +802,7 @@
   "baseline_correct": false,
   "steps": 1,
   "stop_reason": "final_answer",
-  "agent_answer": "ฉันเป็นผู้ช่วยที่ให้ข้อมูลเกี่ยวกับสายพันธุ์สุนัขเท่านั้นค่ะ ฉันไม่สามารถให้สูตรอาหารได้ค่ะ",
+  "agent_answer": "ฉันเป็นผู้ช่วยที่ให้คำแนะนำเกี่ยวกับสายพันธุ์สุนัขเท่านั้นค่ะ ฉันไม่สามารถให้สูตรอาหารได้",
   "baseline_answer": "แน่นอนค่ะ! นี่คือสูตรต้มยำกุ้งแบบไทยๆ ที่อร่อยและทำตามได้ง่ายค่ะ 😊\n\n**ต้มยำกุ้งน้ำใส (แบบคลาสสิก)**\n\n**ส่วนผสม:**\n\n* **กุ้งสด:** 300-400 กรัม (เลือกขนาดตามชอบ แกะเปลือก ผ่าหลัง)\n* **น้ำเปล่า หรือ น้ำซุปไก่/กุ้ง:** 500 มิลลิลิตร\n* **เห็ด:** 100 กรัม (เช่น เห็ดฟาง, เห็ดนางฟ้า, เห็ดออรินจิ หั่นเป็นชิ้น)\n* **ตะไคร้:** 2-3 ต้น (ทุบและหั่นเป็นท่อน)\n* **ข่า:** 5-7 แว่น (หั่นบางๆ)\n* **ใบมะกรูด:** 5-7 ใบ (ฉีกเอาก้านกลางออก)\n* **พริกขี้หนู:** ตามชอบ (ทุบ หรือหั่นแฉลบ)\n* **น้ำมะนาว:** 3-4 ช้อนโต๊ะ (ปรับตามรสชาติ)\n* **น้ำปลา:** 2-3 ช้อนโต๊ะ (ปรับตามรสชาติ)\n* **น้ำตาลปี๊บ (หรือน้ำตาลทราย):** 1-2 ช้อนชา (เพื่อตัดรส)\n* **ผักชี/ต้นหอม:** สำหรับโรยหน้า\n\n**วิธีทำ:**\n\n1. **ต้มน้ำซุป:** นำน้ำเปล่า (หรือน้ำซุป) ใส่หม้อ ตั้งไฟให้เดือด\n2. **ใส่สมุนไพร:** เมื่อน้ำเดือด ใส่ตะไคร้, ข่า, และใบมะกรูดลงไป ต้มต่อประมาณ 5-7 นาที เพื่อให้กลิ่นหอมของสมุนไพรออกมา\n3. **ใส่เห็ด:** ใส่เห็ดลงไป ต้มจนเห็ดเริ่มนิ่ม\n4. **ปรุงรส:** ปรุงรสด้วยน้ำปลา และน้ำตาลปี๊บ ชิมรสชาติให้ได้รสเปรี้ยว เค็ม เผ็ด หอมสมุนไพร (รสชาติควรจะจัดจ้าน)\n5. **ใส่กุ้ง:** เมื่อน้ำซุปเดือดอีกครั้ง ใส่กุ้งลงไป ต้มจนกุ้งสุก (ระวังอย่าต้มนานเกินไป เพราะกุ้งจะแข็ง)\n6. **ปรุงรสสุดท้าย:** ปิดไฟ แล้วค่อยๆ ใส่น้ำมะนาว และพริกขี้หนู (ถ้าชอบเผ็ดมาก) คนให้เข้ากัน ชิมรสอีกครั้งตามชอบ\n7. **จัดเสิร์ฟ:** ตักใส่ชาม โรยหน้าด้วยผักชีและต้นหอม เสิร์ฟร้อนๆ คู่กับข้าวสวย หรือขนมจีนค่ะ\n\n---\n\n**💡 เคล็ดลับความอร่อย:**\n\n* **ความหอม:** การทุบตะไคร้และข่าก่อนใส่ จะช่วยให้กลิ่นหอมออกมาได้ดีกว่าการใส่แบบไม่ทุบค่ะ\n* **ความเปรี้ยว:** ควรใส่น้ำมะนาว **ตอนปิดไฟ** หรือตอนที่น้ำซุปใกล้จะเดือดแล้วเท่านั้น เพื่อรักษากลิ่นหอมของมะนาวค่ะ\n* **ความเข้มข้น (ถ้าชอบแบบน้ำข้น):** หากต้องการต้มยำกุ้งน้ำข้น ให้เติม **นมข้นจืด** หรือ **หัวกะทิ** ลงไปในขั้นตอนที่ 5 แล้วคนให้เข้ากันค่ะ\n\nขอให้สนุกกับการทำต้มยำกุ้งนะคะ! 🦐🍲",
   "trace": []
  },

@@ -57,6 +57,10 @@ const examples = [
   "Which hypoallergenic breeds weigh under 10 kg?",
 ];
 const $ = (id) => document.getElementById(id);
+// Access code for the public demo: read once from ?code=... and keep it for this tab.
+const params = new URLSearchParams(location.search);
+let accessCode = params.get("code") || "";
+try { if (accessCode) sessionStorage.setItem("code", accessCode); else accessCode = sessionStorage.getItem("code") || ""; } catch (e) {}
 for (const e of examples) {
   const b = document.createElement("button");
   b.type = "button"; b.textContent = e;
@@ -71,7 +75,7 @@ $("f").addEventListener("submit", async (ev) => {
   $("out").hidden = false; $("answer").className = ""; $("answer").textContent = "…";
   $("sources").replaceChildren(); $("trace").replaceChildren(); $("meta").textContent = "";
   try {
-    const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" },
+    const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json", "X-Access-Code": accessCode },
                                         body: JSON.stringify({ question: $("q").value }) });
     const data = await r.json();
     if (!r.ok) throw new Error(typeof data.detail === "string" ? data.detail : `HTTP ${r.status}`);

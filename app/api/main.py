@@ -9,11 +9,24 @@ Status codes
   502 the LLM proxy failed or is unreachable
   503 data/index not built yet
   504 the LLM proxy timed out
+  401 wrong or missing access code (only when ACCESS_CODE is set, e.g. on Render)
+  429 also: this server's own request budget is used up (only when deployed publicly)
+
+Public deployment protection (both optional, set as environment variables):
+  ACCESS_CODE      - if set, /api/ask requires header X-Access-Code with this value.
+                     Share the app as https://<app>.onrender.com/?code=<ACCESS_CODE>
+  MAX_ASKS_PER_HOUR - global budget of questions per hour (default 60) so a public
+                     link cannot burn through the class proxy key.
 """
+import hmac
+import os
+import threading
+import time
+from collections import deque
 from pathlib import Path
 
 import openai
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import FileResponse
 
 from app.schemas.api import AskRequest, AskResponse
@@ -22,6 +35,32 @@ from app.services.context import get_context
 
 app = FastAPI(title="Dog Breed Advisor", version="1.0")
 STATIC = Path(__file__).parent / "static"
+
+
+class HourlyBudget:
+    """A simple global limit: at most `limit` questions in any 60-minute window."""
+
+    def __init__(self, limit: int):
+        self.limit, self.times, self.lock = limit, deque(), threading.Lock()
+
+    def take(self) -> bool:
+        now = time.monotonic()
+        with self.lock:
+            while self.times and now - self.times[0] > 3600:
+                self.times.popleft()
+            if len(self.times) >= self.limit:
+                return False
+            self.times.append(now)
+            return True
+
+
+BUDGET = HourlyBudget(int(os.environ.get("MAX_ASKS_PER_HOUR", "60")))
+
+
+def check_access(code: str | None) -> None:
+    expected = os.environ.get("ACCESS_CODE", "")
+    if expected and not hmac.compare_digest((code or "").encode(), expected.encode()):
+        raise HTTPException(status_code=401, detail="Access code missing or wrong. Open the link you were given.")
 
 
 @app.get("/", include_in_schema=False)
@@ -40,7 +79,11 @@ def health() -> dict:
 
 
 @app.post("/api/ask", response_model=AskResponse)
-def ask(req: AskRequest) -> AskResponse:     # sync def -> FastAPI runs it in a worker thread
+def ask(req: AskRequest, x_access_code: str | None = Header(default=None)) -> AskResponse:
+    # sync def -> FastAPI runs it in a worker thread
+    check_access(x_access_code)
+    if not BUDGET.take():
+        raise HTTPException(status_code=429, detail="This demo has reached its hourly question limit. Try later.")
     try:
         ctx = get_context()
     except FileNotFoundError as e:

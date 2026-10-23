@@ -6,7 +6,7 @@ It answers two kinds of questions and decides by itself which tool each needs:
 | Question type | Example | Tool |
 |---|---|---|
 | Descriptive | "Is a Shiba Inu good for a first-time owner?" | `search_breed_docs` - RAG over 40 Wikipedia breed articles, answers cite `[n]` |
-| Numeric / filtering | "Which hypoallergenic breeds weigh under 4 kg?" | `query_breeds` - guarded read-only SQL over ~280 breeds |
+| Numeric / filtering | "Which hypoallergenic breeds weigh under 4 kg?" | `query_breeds` - guarded read-only SQL over 283 breeds |
 
 Questions can be asked in English or Thai. All LLM calls go through the class proxy
 (`from openai import OpenAI`, model `gemma-4-E4B-it`, embeddings `bge-m3`).
@@ -17,7 +17,7 @@ Questions can be asked in English or Thai. All LLM calls go through the class pr
 |---|---|---|
 | 1 | Structured output + schema validation | `app/schemas/` - every tool argument is parsed and validated with Pydantic; errors are returned to the model so it can repair its call |
 | 2 | Retrieval / RAG with citations | `app/retrieval/` - section-aware chunking with 15% overlap, bge-m3 embeddings, cosine search, `min_score` floor, `[n]` citations |
-| **3** | **Retrieval evaluation** | `evaluation/` - 32 labelled questions, Recall@k / MRR vs a BM25 baseline, chunk-size and `min_score` sweeps; 22-question end-to-end agent eval vs a no-tools baseline |
+| **3** | **Retrieval evaluation** | `evaluation/` - 32 labelled questions, Recall@k / MRR vs a BM25 baseline, chunk-size and `min_score` sweeps; end-to-end agent eval vs a no-tools baseline on a 22-question tuning set and a 20-question held-out set |
 | **4** | **Agent loop with tools** | `app/services/agent.py` - native tool calling, allow-listed dispatcher, `max_steps` stop, repeated-call guard |
 | **5** | **Advanced: guarded SQL** | `app/tools/query_breeds.py` - read-only connection, SELECT-only guard, `?` parameter binding, allow-listed sort columns |
 | 6 | Served interface | `app/api/` - FastAPI REST endpoint + a small web page |
@@ -33,7 +33,7 @@ flowchart LR
     D --> Q[query_breeds]
     S --> R[Retriever<br/>bge-m3 cosine<br/>min_score floor]
     R --> IDX[(Chunk index<br/>40 Wikipedia articles)]
-    Q --> DB[(SQLite, read-only<br/>~280 breeds from dogapi.dog)]
+    Q --> DB[(SQLite, read-only<br/>283 breeds from dogapi.dog)]
     S -- numbered passages --> A
     Q -- rows / count --> A
     D -- "ERROR: ... (model retries)" --> A
@@ -69,7 +69,9 @@ uv run python -m scripts.check_connection
 
 ## Build the data and index
 
-The raw data is committed in `data/raw/`. To re-download it from the sources:
+The raw data is committed in `data/raw/`, so this step is optional. To re-download it from the sources,
+first add `WIKI_CONTACT=<your email or GitHub URL>` to `.env` (Wikipedia's User-Agent policy requires contact
+information; requests without it are blocked with HTTP 403), then:
 
 ```bash
 uv run python -m scripts.fetch_data      # Wikipedia articles + dogapi.dog breed table
@@ -170,7 +172,7 @@ data/          wiki_breeds.txt (corpus list), raw/ (committed source data)
 
 ## Limitations
 
-- The RAG corpus covers 40 breeds; the SQL table covers ~280. A descriptive question about a breed outside the 40 cannot be answered from the documents.
+- The RAG corpus covers 40 breeds; the SQL table covers 283. A descriptive question about a breed outside the 40 cannot be answered from the documents.
 - Weights and life spans are breed averages from one source; real dogs vary.
 - The automatic answer check is keyword based: it misses correct refusals phrased differently and cannot judge the content of free-text answers, so held-out answers were also reviewed by hand.
 - The retrieval metric is document-level; it cannot see when the right article but the wrong paragraph is retrieved.

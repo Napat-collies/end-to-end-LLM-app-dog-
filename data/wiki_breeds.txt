@@ -1,0 +1,42 @@
+# Wikipedia article title | breed name shown to users
+# These 40 breeds form the RAG corpus. Lines starting with # are ignored.
+Labrador Retriever|Labrador Retriever
+Golden Retriever|Golden Retriever
+German Shepherd|German Shepherd
+French Bulldog|French Bulldog
+Bulldog|Bulldog
+Poodle|Poodle
+Beagle|Beagle
+Rottweiler|Rottweiler
+Dachshund|Dachshund
+Pembroke Welsh Corgi|Pembroke Welsh Corgi
+Siberian Husky|Siberian Husky
+Shih Tzu|Shih Tzu
+Pomeranian dog|Pomeranian
+Chihuahua (dog)|Chihuahua
+Pug|Pug
+Boxer (dog)|Boxer
+Great Dane|Great Dane
+Dobermann|Dobermann
+Border Collie|Border Collie
+Shiba Inu|Shiba Inu
+Akita (dog)|Akita
+Bernese Mountain Dog|Bernese Mountain Dog
+Cavalier King Charles Spaniel|Cavalier King Charles Spaniel
+Yorkshire Terrier|Yorkshire Terrier
+Maltese dog|Maltese
+Bichon Frisé|Bichon Frise
+Basenji|Basenji
+Dalmatian (dog)|Dalmatian
+St. Bernard (dog)|Saint Bernard
+Greyhound|Greyhound
+Australian Shepherd|Australian Shepherd
+Shetland Sheepdog|Shetland Sheepdog
+Bull Terrier|Bull Terrier
+Jack Russell Terrier|Jack Russell Terrier
+Samoyed dog|Samoyed
+Alaskan Malamute|Alaskan Malamute
+Thai Ridgeback|Thai Ridgeback
+Thai Bangkaew Dog|Thai Bangkaew
+Chow Chow|Chow Chow
+Newfoundland dog|Newfoundland
